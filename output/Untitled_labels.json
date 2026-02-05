@@ -1,7 +1,559 @@
 {
   "deck_name": "Untitled",
-  "commanders": [],
+  "commanders": [
+    "Captain N'ghathrod"
+  ],
   "cards": [
+    {
+      "name": "Captain N'ghathrod",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Horror Pirate",
+        "cmc": 5.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "horrors you control have menace. whenever a horror you control deals combat damage to a player, that player mills that many cards. at the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. put it onto the battlefield under your control."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:5",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Doc Ock's Tentacles",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact \u2014 Equipment",
+        "cmc": 1.0,
+        "keywords": [
+          "Equip"
+        ],
+        "produced_mana": null,
+        "oracle_text": "whenever a creature you control with mana value 5 or greater enters, you may attach this equipment to it. equipped creature gets +4/+4. equip {5}"
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:equip",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Howling Mine",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "at the beginning of each player's draw step, if this artifact is untapped, that player draws an additional card."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Iron Maiden",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 3.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "at the beginning of each opponent's upkeep, this artifact deals x damage to that player, where x is the number of cards in their hand minus 4."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Leyline Axe",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact \u2014 Equipment",
+        "cmc": 4.0,
+        "keywords": [
+          "Equip"
+        ],
+        "produced_mana": null,
+        "oracle_text": "if this card is in your opening hand, you may begin the game with it on the battlefield. equipped creature gets +1/+1 and has double strike and trample. equip {3}"
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:4",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:equip",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Lightning Greaves",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact \u2014 Equipment",
+        "cmc": 2.0,
+        "keywords": [
+          "Equip"
+        ],
+        "produced_mana": null,
+        "oracle_text": "equipped creature has haste and shroud. equip {0}"
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:equip",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Mesmeric Orb",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 2.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "whenever a permanent becomes untapped, that permanent's controller mills a card."
+      },
+      "labels": [
+        {
+          "label": "mill_staples",
+          "confidence": 0.95,
+          "evidence": "curated:mill_staples"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Mindcrank",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 2.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "whenever an opponent loses life, that player mills that many cards."
+      },
+      "labels": [
+        {
+          "label": "mill_staples",
+          "confidence": 0.95,
+          "evidence": "curated:mill_staples"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Mindsplice Apparatus",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 4.0,
+        "keywords": [
+          "Flash"
+        ],
+        "produced_mana": null,
+        "oracle_text": "flash at the beginning of your upkeep, put an oil counter on this artifact. instant and sorcery spells you cast cost {1} less to cast for each oil counter on this artifact."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:4",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:flash",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Sol Ring",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": [
+          "C"
+        ],
+        "oracle_text": "{t}: add {c}{c}."
+      },
+      "labels": [
+        {
+          "label": "fast_mana",
+          "confidence": 0.95,
+          "evidence": "curated:fast_mana"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        },
+        {
+          "label": "ManaRock",
+          "confidence": 0.88,
+          "evidence": "artifact+produces_mana"
+        }
+      ]
+    },
+    {
+      "name": "Specimen Freighter",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact \u2014 Spacecraft",
+        "cmc": 6.0,
+        "keywords": [
+          "Station",
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "when this spacecraft enters, return up to two target non-spacecraft creatures to their owners' hands. station 9+ | flying whenever this spacecraft attacks, defending player mills four cards."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:6",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:station",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Sword of Body and Mind",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact \u2014 Equipment",
+        "cmc": 3.0,
+        "keywords": [
+          "Equip",
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "equipped creature gets +2/+2 and has protection from green and from blue. whenever equipped creature deals combat damage to a player, you create a 2/2 green wolf creature token and that player mills ten cards. equip {2}"
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:equip",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        },
+        {
+          "label": "Tokens",
+          "confidence": 0.6,
+          "evidence": "regex:Tokens"
+        }
+      ]
+    },
+    {
+      "name": "Talisman of Dominance",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "C",
+          "U"
+        ],
+        "oracle_text": "{t}: add {c}. {t}: add {u} or {b}. this artifact deals 1 damage to you."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        },
+        {
+          "label": "ManaRock",
+          "confidence": 0.88,
+          "evidence": "artifact+produces_mana"
+        }
+      ]
+    },
+    {
+      "name": "The Water Crystal",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Artifact",
+        "cmc": 4.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "blue spells you cast cost {1} less to cast. if an opponent would mill one or more cards, they mill that many cards plus four instead. {4}{u}{u}, {t}: each opponent mills cards equal to the number of cards in your hand."
+      },
+      "labels": [
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:4",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Artifact",
+          "confidence": 0.7,
+          "evidence": "type_line:artifact"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
     {
       "name": "Ahriman",
       "quantity": 1,
@@ -54,191 +606,6 @@
       ]
     },
     {
-      "name": "Animate Dead",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment \u2014 Aura",
-        "cmc": 2.0,
-        "keywords": [
-          "Enchant"
-        ],
-        "produced_mana": null,
-        "oracle_text": "enchant creature card in a graveyard when this aura enters, if it's on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this aura.\" return enchanted creature card to the battlefield under your control and attach this aura to it. when this aura leaves the battlefield, that creature's controller sacrifices it. enchanted creature gets -1/-0."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:enchant",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Anoint with Affliction",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [
-          "Corrupted"
-        ],
-        "produced_mana": null,
-        "oracle_text": "exile target creature if it has mana value 3 or less. corrupted \u2014 exile that creature instead if its controller has three or more poison counters."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:corrupted",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "SpotRemoval",
-          "confidence": 0.6,
-          "evidence": "regex:SpotRemoval"
-        }
-      ]
-    },
-    {
-      "name": "Bilious Skulldweller",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Insect",
-        "cmc": 1.0,
-        "keywords": [
-          "Toxic",
-          "Deathtouch"
-        ],
-        "produced_mana": null,
-        "oracle_text": "deathtouch toxic 1"
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:toxic",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:deathtouch",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Black Dragon Gate",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land \u2014 Gate",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "G",
-          "R",
-          "U",
-          "W"
-        ],
-        "oracle_text": "this land enters tapped. as this land enters, choose a color other than black. {t}: add {b} or one mana of the chosen color."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        },
-        {
-          "label": "ProduceMana",
-          "confidence": 0.6,
-          "evidence": "regex:ProduceMana"
-        }
-      ]
-    },
-    {
-      "name": "Bring the Ending",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [
-          "Corrupted"
-        ],
-        "produced_mana": null,
-        "oracle_text": "counter target spell unless its controller pays {2}. corrupted \u2014 counter that spell instead if its controller has three or more poison counters."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:corrupted",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Counterspell",
-          "confidence": 0.6,
-          "evidence": "regex:Counterspell"
-        }
-      ]
-    },
-    {
       "name": "Bruvac the Grandiloquent",
       "quantity": 1,
       "scryfall": {
@@ -251,6 +618,11 @@
         "oracle_text": "if an opponent would mill one or more cards, they mill twice that many cards instead."
       },
       "labels": [
+        {
+          "label": "mill_staples",
+          "confidence": 0.95,
+          "evidence": "curated:mill_staples"
+        },
         {
           "label": "IsCreature",
           "confidence": 0.85,
@@ -275,230 +647,11 @@
           "label": "HasKeyword:mill",
           "confidence": 0.8,
           "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Captain N'ghathrod",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Horror Pirate",
-        "cmc": 5.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "horrors you control have menace. whenever a horror you control deals combat damage to a player, that player mills that many cards. at the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. put it onto the battlefield under your control."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
         },
         {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:5",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Command Tower",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "G",
-          "R",
-          "U",
-          "W"
-        ],
-        "oracle_text": "{t}: add one mana of any color in your commander's color identity."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        },
-        {
-          "label": "Ritual",
+          "label": "Mill",
           "confidence": 0.6,
-          "evidence": "regex:Ritual"
-        },
-        {
-          "label": "ProduceMana",
-          "confidence": 0.6,
-          "evidence": "regex:ProduceMana"
-        }
-      ]
-    },
-    {
-      "name": "Creeping Tar Pit",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "U"
-        ],
-        "oracle_text": "this land enters tapped. {t}: add {u} or {b}. {1}{u}{b}: until end of turn, this land becomes a 3/2 blue and black elemental creature. it's still a land. it can't be blocked this turn."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "Damnation",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Sorcery",
-        "cmc": 4.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "destroy all creatures. they can't be regenerated."
-      },
-      "labels": [
-        {
-          "label": "staple_board_wipes",
-          "confidence": 0.95,
-          "evidence": "curated:staple_board_wipes"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "BoardWipe",
-          "confidence": 0.6,
-          "evidence": "regex:BoardWipe"
-        }
-      ]
-    },
-    {
-      "name": "Dark Ritual",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": [
-          "B"
-        ],
-        "oracle_text": "add {b}{b}{b}."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "Darkslick Shores",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "U"
-        ],
-        "oracle_text": "this land enters tapped unless you control two or fewer other lands. {t}: add {u} or {b}."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
+          "evidence": "regex:Mill"
         }
       ]
     },
@@ -543,20 +696,55 @@
       ]
     },
     {
-      "name": "Demonic Tutor",
+      "name": "Gulping Scraptrap",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Sorcery",
-        "cmc": 2.0,
-        "keywords": [],
+        "type_line": "Creature \u2014 Phyrexian Horror",
+        "cmc": 5.0,
+        "keywords": [
+          "Proliferate"
+        ],
         "produced_mana": null,
-        "oracle_text": "search your library for a card, put that card into your hand, then shuffle."
+        "oracle_text": "when this creature enters or dies, proliferate."
       },
       "labels": [
         {
-          "label": "unconditional_tutors",
-          "confidence": 0.95,
-          "evidence": "curated:unconditional_tutors"
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:5",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:proliferate",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        }
+      ]
+    },
+    {
+      "name": "Hecteyes",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Creature \u2014 Ooze Horror",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "when this creature enters, each opponent discards a card."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
         },
         {
           "label": "CommanderLegal",
@@ -569,28 +757,70 @@
           "evidence": "cmc"
         },
         {
-          "label": "TutorAny",
+          "label": "Discard",
           "confidence": 0.6,
-          "evidence": "regex:TutorAny"
-        },
-        {
-          "label": "Tutor",
-          "confidence": 0.6,
-          "evidence": "regex:Tutor"
+          "evidence": "regex:Discard"
         }
       ]
     },
     {
-      "name": "Distant Melody",
+      "name": "Hullbreaker Horror",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Sorcery",
-        "cmc": 4.0,
-        "keywords": [],
+        "type_line": "Creature \u2014 Kraken Horror",
+        "cmc": 7.0,
+        "keywords": [
+          "Flash"
+        ],
         "produced_mana": null,
-        "oracle_text": "choose a creature type. draw a card for each permanent you control of that type."
+        "oracle_text": "flash this spell can't be countered. whenever you cast a spell, choose up to one \u2014 \u2022 return target spell you don't control to its owner's hand. \u2022 return target nonland permanent to its owner's hand."
       },
       "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:7",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:flash",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Counterspell",
+          "confidence": 0.6,
+          "evidence": "regex:Counterspell"
+        }
+      ]
+    },
+    {
+      "name": "Phyrexian Obliterator",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Creature \u2014 Phyrexian Horror",
+        "cmc": 4.0,
+        "keywords": [
+          "Trample"
+        ],
+        "produced_mana": null,
+        "oracle_text": "trample whenever a source deals damage to this creature, that source's controller sacrifices that many permanents of their choice."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -602,133 +832,36 @@
           "evidence": "cmc"
         },
         {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        }
-      ]
-    },
-    {
-      "name": "Distorted Curiosity",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Sorcery",
-        "cmc": 3.0,
-        "keywords": [
-          "Corrupted"
-        ],
-        "produced_mana": null,
-        "oracle_text": "corrupted \u2014 this spell costs {2} less to cast if an opponent has three or more poison counters. draw two cards."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:corrupted",
+          "label": "HasKeyword:trample",
           "confidence": 0.8,
           "evidence": "keywords"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
         }
       ]
     },
     {
-      "name": "Doc Ock's Tentacles",
+      "name": "Ruin Crab",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Artifact \u2014 Equipment",
+        "type_line": "Creature \u2014 Crab",
         "cmc": 1.0,
         "keywords": [
-          "Equip"
+          "Mill",
+          "Landfall"
         ],
         "produced_mana": null,
-        "oracle_text": "whenever a creature you control with mana value 5 or greater enters, you may attach this equipment to it. equipped creature gets +4/+4. equip {5}"
+        "oracle_text": "landfall \u2014 whenever a land you control enters, each opponent mills three cards."
       },
       "labels": [
         {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
+          "label": "mill_staples",
+          "confidence": 0.95,
+          "evidence": "curated:mill_staples"
         },
         {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:equip",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Evolving Wilds",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "{t}, sacrifice this land: search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
+          "label": "IsCreature",
           "confidence": 0.85,
-          "evidence": "type_line:land"
+          "evidence": "type_line:creature"
         },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Tutor",
-          "confidence": 0.6,
-          "evidence": "regex:Tutor"
-        },
-        {
-          "label": "SacOutlet",
-          "confidence": 0.6,
-          "evidence": "regex:SacOutlet"
-        }
-      ]
-    },
-    {
-      "name": "Font of Progress",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 1.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "this artifact enters with two oil counters on it. {3}, {t}: target player mills x cards, where x is the number of oil counters on this artifact."
-      },
-      "labels": [
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -745,9 +878,599 @@
           "evidence": "keywords"
         },
         {
+          "label": "HasKeyword:landfall",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Spellskite",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Artifact Creature \u2014 Phyrexian Horror",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "{u/p}: change a target of target spell or ability to this creature."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
           "label": "Artifact",
           "confidence": 0.7,
           "evidence": "type_line:artifact"
+        }
+      ]
+    },
+    {
+      "name": "Thousand-Faced Shadow",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Creature \u2014 Human Ninja",
+        "cmc": 1.0,
+        "keywords": [
+          "Flying",
+          "Ninjutsu"
+        ],
+        "produced_mana": null,
+        "oracle_text": "ninjutsu {2}{u}{u} flying when this creature enters from your hand, if it's attacking, create a token that's a copy of another target attacking creature. the token enters tapped and attacking."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:flying",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:ninjutsu",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Tokens",
+          "confidence": 0.6,
+          "evidence": "regex:Tokens"
+        }
+      ]
+    },
+    {
+      "name": "Thrummingbird",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Creature \u2014 Phyrexian Bird Horror",
+        "cmc": 2.0,
+        "keywords": [
+          "Flying",
+          "Proliferate"
+        ],
+        "produced_mana": null,
+        "oracle_text": "flying whenever this creature deals combat damage to a player, proliferate."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:flying",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:proliferate",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        }
+      ]
+    },
+    {
+      "name": "Toxrill, the Corrosive",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Slug Horror",
+        "cmc": 7.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "at the beginning of each end step, put a slime counter on each creature you don't control. creatures you don't control get -1/-1 for each slime counter on them. whenever a creature you don't control with a slime counter on it dies, create a 1/1 black slug creature token. {u}{b}, sacrifice a slug: draw a card."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:7",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Tokens",
+          "confidence": 0.6,
+          "evidence": "regex:Tokens"
+        },
+        {
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
+        },
+        {
+          "label": "SacOutlet",
+          "confidence": 0.6,
+          "evidence": "regex:SacOutlet"
+        }
+      ]
+    },
+    {
+      "name": "Umbris, Fear Manifest",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Nightmare Horror",
+        "cmc": 5.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "umbris gets +1/+1 for each card your opponents own in exile. whenever umbris or another nightmare or horror you control enters, target opponent exiles cards from the top of their library until they exile a land card."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:5",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Zellix, Sanity Flayer",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Horror",
+        "cmc": 3.0,
+        "keywords": [
+          "Choose a background",
+          "Hive Mind",
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "hive mind \u2014 whenever a player mills one or more creature cards, you create a 1/1 black horror creature token. {1}, {t}: target player mills three cards. choose a background"
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:choose a background",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:hive mind",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        },
+        {
+          "label": "Tokens",
+          "confidence": 0.6,
+          "evidence": "regex:Tokens"
+        }
+      ]
+    },
+    {
+      "name": "Animate Dead",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment \u2014 Aura",
+        "cmc": 2.0,
+        "keywords": [
+          "Enchant"
+        ],
+        "produced_mana": null,
+        "oracle_text": "enchant creature card in a graveyard when this aura enters, if it's on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this aura.\" return enchanted creature card to the battlefield under your control and attach this aura to it. when this aura leaves the battlefield, that creature's controller sacrifices it. enchanted creature gets -1/-0."
+      },
+      "labels": [
+        {
+          "label": "reanimator_staples",
+          "confidence": 0.95,
+          "evidence": "curated:reanimator_staples"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:enchant",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        }
+      ]
+    },
+    {
+      "name": "Memory Erosion",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "whenever an opponent casts a spell, that player mills two cards."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        }
+      ]
+    },
+    {
+      "name": "Phyrexian Arena",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "at the beginning of your upkeep, you draw a card and you lose 1 life."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
+        }
+      ]
+    },
+    {
+      "name": "Phyrexian Reclamation",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "{1}{b}, pay 2 life: return target creature card from your graveyard to your hand."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Recursion",
+          "confidence": 0.6,
+          "evidence": "regex:Recursion"
+        }
+      ]
+    },
+    {
+      "name": "Propaganda",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Rhystic Study",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "whenever an opponent casts a spell, you may draw a card unless that player pays {1}."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Sphinx's Tutelage",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "whenever you draw a card, target opponent mills two cards. if two nonland cards that share a color were milled this way, repeat this process. {5}{u}: draw a card, then discard a card."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Mill",
+          "confidence": 0.6,
+          "evidence": "regex:Mill"
+        },
+        {
+          "label": "Discard",
+          "confidence": 0.6,
+          "evidence": "regex:Discard"
+        },
+        {
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
+        },
+        {
+          "label": "Loot",
+          "confidence": 0.6,
+          "evidence": "regex:Loot"
+        }
+      ]
+    },
+    {
+      "name": "Anoint with Affliction",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 2.0,
+        "keywords": [
+          "Corrupted"
+        ],
+        "produced_mana": null,
+        "oracle_text": "exile target creature if it has mana value 3 or less. corrupted \u2014 exile that creature instead if its controller has three or more poison counters."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:corrupted",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "SpotRemoval",
+          "confidence": 0.6,
+          "evidence": "regex:SpotRemoval"
+        }
+      ]
+    },
+    {
+      "name": "Bring the Ending",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 2.0,
+        "keywords": [
+          "Corrupted"
+        ],
+        "produced_mana": null,
+        "oracle_text": "counter target spell unless its controller pays {2}. corrupted \u2014 counter that spell instead if its controller has three or more poison counters."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:corrupted",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "Counterspell",
+          "confidence": 0.6,
+          "evidence": "regex:Counterspell"
+        }
+      ]
+    },
+    {
+      "name": "Dark Ritual",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": [
+          "B"
+        ],
+        "oracle_text": "add {b}{b}{b}."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
         }
       ]
     },
@@ -846,56 +1569,85 @@
       ]
     },
     {
-      "name": "Gulping Scraptrap",
+      "name": "Lethal Scheme",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Horror",
-        "cmc": 5.0,
+        "type_line": "Instant",
+        "cmc": 4.0,
         "keywords": [
-          "Proliferate"
+          "Connive",
+          "Convoke"
         ],
         "produced_mana": null,
-        "oracle_text": "when this creature enters or dies, proliferate."
+        "oracle_text": "convoke destroy target creature or planeswalker. each creature that convoked this spell connives."
       },
       "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
           "evidence": "legalities:commander"
         },
         {
-          "label": "CMC:5",
+          "label": "CMC:4",
           "confidence": 0.7,
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:proliferate",
+          "label": "HasKeyword:connive",
           "confidence": 0.8,
           "evidence": "keywords"
+        },
+        {
+          "label": "HasKeyword:convoke",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "SpotRemoval",
+          "confidence": 0.6,
+          "evidence": "regex:SpotRemoval"
         }
       ]
     },
     {
-      "name": "Hecteyes",
+      "name": "Miscast",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Creature \u2014 Ooze Horror",
-        "cmc": 2.0,
+        "type_line": "Instant",
+        "cmc": 1.0,
         "keywords": [],
         "produced_mana": null,
-        "oracle_text": "when this creature enters, each opponent discards a card."
+        "oracle_text": "counter target instant or sorcery spell unless its controller pays {3}."
       },
       "labels": [
         {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
         },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Counterspell",
+          "confidence": 0.6,
+          "evidence": "regex:Counterspell"
+        }
+      ]
+    },
+    {
+      "name": "Offer Immortality",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "target creature gains deathtouch and indestructible until end of turn."
+      },
+      "labels": [
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -909,14 +1661,14 @@
       ]
     },
     {
-      "name": "Howling Mine",
+      "name": "Prologue to Phyresis",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Artifact",
+        "type_line": "Instant",
         "cmc": 2.0,
         "keywords": [],
         "produced_mana": null,
-        "oracle_text": "at the beginning of each player's draw step, if this artifact is untapped, that player draws an additional card."
+        "oracle_text": "each opponent gets a poison counter. draw a card."
       },
       "labels": [
         {
@@ -930,42 +1682,83 @@
           "evidence": "cmc"
         },
         {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
         }
       ]
     },
     {
-      "name": "Hullbreaker Horror",
+      "name": "Secret Identity",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Creature \u2014 Kraken Horror",
-        "cmc": 7.0,
+        "type_line": "Instant",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "choose one \u2014 \u2022 conceal \u2014 until end of turn, target creature you control becomes a citizen with base power and toughness 1/1 and gains hexproof. \u2022 reveal \u2014 until end of turn, target creature you control becomes a hero with base power and toughness 3/4 and gains flying and vigilance."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Sheoldred's Edict",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 2.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "choose one \u2014 \u2022 each opponent sacrifices a nontoken creature of their choice. \u2022 each opponent sacrifices a creature token of their choice. \u2022 each opponent sacrifices a planeswalker of their choice."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:2",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Spider-Sense",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Instant",
+        "cmc": 2.0,
         "keywords": [
-          "Flash"
+          "Web-slinging"
         ],
         "produced_mana": null,
-        "oracle_text": "flash this spell can't be countered. whenever you cast a spell, choose up to one \u2014 \u2022 return target spell you don't control to its owner's hand. \u2022 return target nonland permanent to its owner's hand."
+        "oracle_text": "web-slinging {u} counter target instant spell, sorcery spell, or triggered ability."
       },
       "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
           "evidence": "legalities:commander"
         },
         {
-          "label": "CMC:7",
+          "label": "CMC:2",
           "confidence": 0.7,
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:flash",
+          "label": "HasKeyword:web-slinging",
           "confidence": 0.8,
           "evidence": "keywords"
         },
@@ -977,16 +1770,21 @@
       ]
     },
     {
-      "name": "Imperial Seal",
+      "name": "Vampiric Tutor",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Sorcery",
+        "type_line": "Instant",
         "cmc": 1.0,
         "keywords": [],
         "produced_mana": null,
         "oracle_text": "search your library for a card, then shuffle and put that card on top. you lose 2 life."
       },
       "labels": [
+        {
+          "label": "unconditional_tutors",
+          "confidence": 0.95,
+          "evidence": "curated:unconditional_tutors"
+        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -1010,14 +1808,14 @@
       ]
     },
     {
-      "name": "Iron Maiden",
+      "name": "Vraska's Fall",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Artifact",
+        "type_line": "Instant",
         "cmc": 3.0,
         "keywords": [],
         "produced_mana": null,
-        "oracle_text": "at the beginning of each opponent's upkeep, this artifact deals x damage to that player, where x is the number of cards in their hand minus 4."
+        "oracle_text": "each opponent sacrifices a creature or planeswalker of their choice and gets a poison counter."
       },
       "labels": [
         {
@@ -1029,11 +1827,209 @@
           "label": "CMC:3",
           "confidence": 0.7,
           "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Black Dragon Gate",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land \u2014 Gate",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "G",
+          "R",
+          "U",
+          "W"
+        ],
+        "oracle_text": "this land enters tapped. as this land enters, choose a color other than black. {t}: add {b} or one mana of the chosen color."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
         },
         {
-          "label": "Artifact",
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
           "confidence": 0.7,
-          "evidence": "type_line:artifact"
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        },
+        {
+          "label": "ProduceMana",
+          "confidence": 0.6,
+          "evidence": "regex:ProduceMana"
+        }
+      ]
+    },
+    {
+      "name": "Command Tower",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "G",
+          "R",
+          "U",
+          "W"
+        ],
+        "oracle_text": "{t}: add one mana of any color in your commander's color identity."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        },
+        {
+          "label": "Ritual",
+          "confidence": 0.6,
+          "evidence": "regex:Ritual"
+        },
+        {
+          "label": "ProduceMana",
+          "confidence": 0.6,
+          "evidence": "regex:ProduceMana"
+        }
+      ]
+    },
+    {
+      "name": "Creeping Tar Pit",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "U"
+        ],
+        "oracle_text": "this land enters tapped. {t}: add {u} or {b}. {1}{u}{b}: until end of turn, this land becomes a 3/2 blue and black elemental creature. it's still a land. it can't be blocked this turn."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        }
+      ]
+    },
+    {
+      "name": "Darkslick Shores",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "U"
+        ],
+        "oracle_text": "this land enters tapped unless you control two or fewer other lands. {t}: add {u} or {b}."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        }
+      ]
+    },
+    {
+      "name": "Evolving Wilds",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "{t}, sacrifice this land: search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Tutor",
+          "confidence": 0.6,
+          "evidence": "regex:Tutor"
+        },
+        {
+          "label": "SacOutlet",
+          "confidence": 0.6,
+          "evidence": "regex:SacOutlet"
         }
       ]
     },
@@ -1111,63 +2107,188 @@
           "label": "ProducesMana",
           "confidence": 0.8,
           "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "Lethal Scheme",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 4.0,
-        "keywords": [
-          "Connive",
-          "Convoke"
-        ],
-        "produced_mana": null,
-        "oracle_text": "convoke destroy target creature or planeswalker. each creature that convoked this spell connives."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
         },
         {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:connive",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:convoke",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "SpotRemoval",
+          "label": "Mill",
           "confidence": 0.6,
-          "evidence": "regex:SpotRemoval"
+          "evidence": "regex:Mill"
         }
       ]
     },
     {
-      "name": "Leyline Axe",
+      "name": "River of Tears",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Artifact \u2014 Equipment",
-        "cmc": 4.0,
-        "keywords": [
-          "Equip"
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "U"
         ],
-        "produced_mana": null,
-        "oracle_text": "if this card is in your opening hand, you may begin the game with it on the battlefield. equipped creature gets +1/+1 and has double strike and trample. equip {3}"
+        "oracle_text": "{t}: add {u}. if you played a land this turn, add {b} instead."
       },
       "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        }
+      ]
+    },
+    {
+      "name": "Sea Gate",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land \u2014 Gate",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B",
+          "G",
+          "R",
+          "U",
+          "W"
+        ],
+        "oracle_text": "this land enters tapped. as this land enters, choose a color other than blue. {t}: add {u} or one mana of the chosen color."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        },
+        {
+          "label": "ProduceMana",
+          "confidence": 0.6,
+          "evidence": "regex:ProduceMana"
+        }
+      ]
+    },
+    {
+      "name": "Swamp",
+      "quantity": 14,
+      "scryfall": {
+        "type_line": "Basic Land \u2014 Swamp",
+        "cmc": 0.0,
+        "keywords": [],
+        "produced_mana": [
+          "B"
+        ],
+        "oracle_text": ""
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        }
+      ]
+    },
+    {
+      "name": "Temple of Deceit",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Land",
+        "cmc": 0.0,
+        "keywords": [
+          "Scry"
+        ],
+        "produced_mana": [
+          "B",
+          "U"
+        ],
+        "oracle_text": "this land enters tapped. when this land enters, scry 1. {t}: add {u} or {b}."
+      },
+      "labels": [
+        {
+          "label": "IsLand",
+          "confidence": 0.85,
+          "evidence": "type_line:land"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:0",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:scry",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        },
+        {
+          "label": "ProducesMana",
+          "confidence": 0.8,
+          "evidence": "produced_mana/oracle"
+        }
+      ]
+    },
+    {
+      "name": "Damnation",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Sorcery",
+        "cmc": 4.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "destroy all creatures. they can't be regenerated."
+      },
+      "labels": [
+        {
+          "label": "staple_board_wipes",
+          "confidence": 0.95,
+          "evidence": "curated:staple_board_wipes"
+        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -1179,30 +2300,28 @@
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:equip",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
+          "label": "BoardWipe",
+          "confidence": 0.6,
+          "evidence": "regex:BoardWipe"
         }
       ]
     },
     {
-      "name": "Lightning Greaves",
+      "name": "Demonic Tutor",
       "quantity": 1,
       "scryfall": {
-        "type_line": "Artifact \u2014 Equipment",
+        "type_line": "Sorcery",
         "cmc": 2.0,
-        "keywords": [
-          "Equip"
-        ],
+        "keywords": [],
         "produced_mana": null,
-        "oracle_text": "equipped creature has haste and shroud. equip {0}"
+        "oracle_text": "search your library for a card, put that card into your hand, then shuffle."
       },
       "labels": [
+        {
+          "label": "unconditional_tutors",
+          "confidence": 0.95,
+          "evidence": "curated:unconditional_tutors"
+        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -1214,14 +2333,75 @@
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:equip",
-          "confidence": 0.8,
-          "evidence": "keywords"
+          "label": "TutorAny",
+          "confidence": 0.6,
+          "evidence": "regex:TutorAny"
         },
         {
-          "label": "Artifact",
+          "label": "Tutor",
+          "confidence": 0.6,
+          "evidence": "regex:Tutor"
+        }
+      ]
+    },
+    {
+      "name": "Distant Melody",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Sorcery",
+        "cmc": 4.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "choose a creature type. draw a card for each permanent you control of that type."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:4",
           "confidence": 0.7,
-          "evidence": "type_line:artifact"
+          "evidence": "cmc"
+        },
+        {
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
+        }
+      ]
+    },
+    {
+      "name": "Imperial Seal",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Sorcery",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "search your library for a card, then shuffle and put that card on top. you lose 2 life."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "TutorAny",
+          "confidence": 0.6,
+          "evidence": "regex:TutorAny"
+        },
+        {
+          "label": "Tutor",
+          "confidence": 0.6,
+          "evidence": "regex:Tutor"
         }
       ]
     },
@@ -1245,6 +2425,11 @@
           "label": "CMC:2",
           "confidence": 0.7,
           "evidence": "cmc"
+        },
+        {
+          "label": "Discard",
+          "confidence": 0.6,
+          "evidence": "regex:Discard"
         }
       ]
     },
@@ -1262,6 +2447,11 @@
         "oracle_text": "kicker {3}{u} each opponent mills eight cards. if this spell was kicked, instead each opponent mills half their library, rounded up."
       },
       "labels": [
+        {
+          "label": "mill_staples",
+          "confidence": 0.95,
+          "evidence": "curated:mill_staples"
+        },
         {
           "label": "CommanderLegal",
           "confidence": 0.8,
@@ -1281,468 +2471,11 @@
           "label": "HasKeyword:kicker",
           "confidence": 0.8,
           "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Memory Erosion",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "whenever an opponent casts a spell, that player mills two cards."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
         },
         {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Mesmeric Orb",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 2.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "whenever a permanent becomes untapped, that permanent's controller mills a card."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Mindcrank",
-      "quantity": 2,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 2.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "whenever an opponent loses life, that player mills that many cards."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Mindsplice Apparatus",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 4.0,
-        "keywords": [
-          "Flash"
-        ],
-        "produced_mana": null,
-        "oracle_text": "flash at the beginning of your upkeep, put an oil counter on this artifact. instant and sorcery spells you cast cost {1} less to cast for each oil counter on this artifact."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:flash",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Miscast",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "counter target instant or sorcery spell unless its controller pays {3}."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Counterspell",
+          "label": "Mill",
           "confidence": 0.6,
-          "evidence": "regex:Counterspell"
-        }
-      ]
-    },
-    {
-      "name": "Offer Immortality",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "target creature gains deathtouch and indestructible until end of turn."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Pestilent Syphoner",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Insect",
-        "cmc": 2.0,
-        "keywords": [
-          "Flying",
-          "Toxic"
-        ],
-        "produced_mana": null,
-        "oracle_text": "flying toxic 1"
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:flying",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:toxic",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Phyrexian Arena",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "at the beginning of your upkeep, you draw a card and you lose 1 life."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        }
-      ]
-    },
-    {
-      "name": "Phyrexian Obliterator",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Horror",
-        "cmc": 4.0,
-        "keywords": [
-          "Trample"
-        ],
-        "produced_mana": null,
-        "oracle_text": "trample whenever a source deals damage to this creature, that source's controller sacrifices that many permanents of their choice."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:trample",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Phyrexian Reclamation",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "{1}{b}, pay 2 life: return target creature card from your graveyard to your hand."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Recursion",
-          "confidence": 0.6,
-          "evidence": "regex:Recursion"
-        }
-      ]
-    },
-    {
-      "name": "Pilfer",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Sorcery",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "target opponent reveals their hand. you choose a nonland card from it. that player discards that card."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Prologue to Phyresis",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "each opponent gets a poison counter. draw a card."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        }
-      ]
-    },
-    {
-      "name": "Propaganda",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Prosthetic Injector",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact \u2014 Equipment",
-        "cmc": 1.0,
-        "keywords": [
-          "Equip"
-        ],
-        "produced_mana": null,
-        "oracle_text": "equipped creature gets +0/+2 and has toxic 1. equip {1}"
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:equip",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Ravenous Necrotitan",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Horror",
-        "cmc": 4.0,
-        "keywords": [
-          "Corrupted"
-        ],
-        "produced_mana": null,
-        "oracle_text": "corrupted \u2014 when this creature enters, sacrifice a creature unless an opponent has three or more poison counters."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:corrupted",
-          "confidence": 0.8,
-          "evidence": "keywords"
+          "evidence": "regex:Mill"
         }
       ]
     },
@@ -1793,94 +2526,9 @@
       },
       "labels": [
         {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Rhystic Study",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "whenever an opponent casts a spell, you may draw a card unless that player pays {1}."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "River of Tears",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "U"
-        ],
-        "oracle_text": "{t}: add {u}. if you played a land this turn, add {b} instead."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "Ruin Crab",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Crab",
-        "cmc": 1.0,
-        "keywords": [
-          "Mill",
-          "Landfall"
-        ],
-        "produced_mana": null,
-        "oracle_text": "landfall \u2014 whenever a land you control enters, each opponent mills three cards."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
+          "label": "reanimator_staples",
+          "confidence": 0.95,
+          "evidence": "curated:reanimator_staples"
         },
         {
           "label": "CommanderLegal",
@@ -1893,14 +2541,9 @@
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:landfall",
-          "confidence": 0.8,
-          "evidence": "keywords"
+          "label": "Reanimator",
+          "confidence": 0.6,
+          "evidence": "regex:Reanimator"
         }
       ]
     },
@@ -1913,73 +2556,6 @@
         "keywords": [],
         "produced_mana": null,
         "oracle_text": "choose two target players. each of them searches their library for a card, then shuffles and puts that card on top."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Sea Gate",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land \u2014 Gate",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "G",
-          "R",
-          "U",
-          "W"
-        ],
-        "oracle_text": "this land enters tapped. as this land enters, choose a color other than blue. {t}: add {u} or one mana of the chosen color."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        },
-        {
-          "label": "ProduceMana",
-          "confidence": 0.6,
-          "evidence": "regex:ProduceMana"
-        }
-      ]
-    },
-    {
-      "name": "Secret Identity",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "choose one \u2014 \u2022 conceal \u2014 until end of turn, target creature you control becomes a citizen with base power and toughness 1/1 and gains hexproof. \u2022 reveal \u2014 until end of turn, target creature you control becomes a hero with base power and toughness 3/4 and gains flying and vigilance."
       },
       "labels": [
         {
@@ -2030,331 +2606,6 @@
       ]
     },
     {
-      "name": "Sheoldred's Edict",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "choose one \u2014 \u2022 each opponent sacrifices a nontoken creature of their choice. \u2022 each opponent sacrifices a creature token of their choice. \u2022 each opponent sacrifices a planeswalker of their choice."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Sol Ring",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": [
-          "C"
-        ],
-        "oracle_text": "{t}: add {c}{c}."
-      },
-      "labels": [
-        {
-          "label": "fast_mana",
-          "confidence": 0.95,
-          "evidence": "curated:fast_mana"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        },
-        {
-          "label": "ManaRock",
-          "confidence": 0.88,
-          "evidence": "artifact+produces_mana"
-        }
-      ]
-    },
-    {
-      "name": "Specimen Freighter",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact \u2014 Spacecraft",
-        "cmc": 6.0,
-        "keywords": [
-          "Station",
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "when this spacecraft enters, return up to two target non-spacecraft creatures to their owners' hands. station 9+ | flying whenever this spacecraft attacks, defending player mills four cards."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:6",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:station",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Spellskite",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact Creature \u2014 Phyrexian Horror",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "{u/p}: change a target of target spell or ability to this creature."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Sphinx's Tutelage",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "whenever you draw a card, target opponent mills two cards. if two nonland cards that share a color were milled this way, repeat this process. {5}{u}: draw a card, then discard a card."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        },
-        {
-          "label": "Loot",
-          "confidence": 0.6,
-          "evidence": "regex:Loot"
-        }
-      ]
-    },
-    {
-      "name": "Spider-Sense",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 2.0,
-        "keywords": [
-          "Web-slinging"
-        ],
-        "produced_mana": null,
-        "oracle_text": "web-slinging {u} counter target instant spell, sorcery spell, or triggered ability."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:web-slinging",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Counterspell",
-          "confidence": 0.6,
-          "evidence": "regex:Counterspell"
-        }
-      ]
-    },
-    {
-      "name": "Swamp",
-      "quantity": 14,
-      "scryfall": {
-        "type_line": "Basic Land \u2014 Swamp",
-        "cmc": 0.0,
-        "keywords": [],
-        "produced_mana": [
-          "B"
-        ],
-        "oracle_text": ""
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "Sword of Body and Mind",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact \u2014 Equipment",
-        "cmc": 3.0,
-        "keywords": [
-          "Equip",
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "equipped creature gets +2/+2 and has protection from green and from blue. whenever equipped creature deals combat damage to a player, you create a 2/2 green wolf creature token and that player mills ten cards. equip {2}"
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:equip",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
-      "name": "Talisman of Dominance",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Artifact",
-        "cmc": 2.0,
-        "keywords": [],
-        "produced_mana": [
-          "B",
-          "C",
-          "U"
-        ],
-        "oracle_text": "{t}: add {c}. {t}: add {u} or {b}. this artifact deals 1 damage to you."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        },
-        {
-          "label": "ManaRock",
-          "confidence": 0.88,
-          "evidence": "artifact+produces_mana"
-        }
-      ]
-    },
-    {
       "name": "Tasha's Hideous Laughter",
       "quantity": 1,
       "scryfall": {
@@ -2378,89 +2629,6 @@
       ]
     },
     {
-      "name": "Temple of Deceit",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Land",
-        "cmc": 0.0,
-        "keywords": [
-          "Scry"
-        ],
-        "produced_mana": [
-          "B",
-          "U"
-        ],
-        "oracle_text": "this land enters tapped. when this land enters, scry 1. {t}: add {u} or {b}."
-      },
-      "labels": [
-        {
-          "label": "IsLand",
-          "confidence": 0.85,
-          "evidence": "type_line:land"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:0",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:scry",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "ProducesMana",
-          "confidence": 0.8,
-          "evidence": "produced_mana/oracle"
-        }
-      ]
-    },
-    {
-      "name": "The Water Crystal",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Artifact",
-        "cmc": 4.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "blue spells you cast cost {1} less to cast. if an opponent would mill one or more cards, they mill that many cards plus four instead. {4}{u}{u}, {t}: each opponent mills cards equal to the number of cards in your hand."
-      },
-      "labels": [
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:4",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "Artifact",
-          "confidence": 0.7,
-          "evidence": "type_line:artifact"
-        }
-      ]
-    },
-    {
       "name": "Thoughtseize",
       "quantity": 1,
       "scryfall": {
@@ -2478,164 +2646,6 @@
         },
         {
           "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Thousand-Faced Shadow",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Human Ninja",
-        "cmc": 1.0,
-        "keywords": [
-          "Flying",
-          "Ninjutsu"
-        ],
-        "produced_mana": null,
-        "oracle_text": "ninjutsu {2}{u}{u} flying when this creature enters from your hand, if it's attacking, create a token that's a copy of another target attacking creature. the token enters tapped and attacking."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:flying",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:ninjutsu",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Thrummingbird",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Creature \u2014 Phyrexian Bird Horror",
-        "cmc": 2.0,
-        "keywords": [
-          "Flying",
-          "Proliferate"
-        ],
-        "produced_mana": null,
-        "oracle_text": "flying whenever this creature deals combat damage to a player, proliferate."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:2",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:flying",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:proliferate",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
-      "name": "Toxrill, the Corrosive",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Slug Horror",
-        "cmc": 7.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "at the beginning of each end step, put a slime counter on each creature you don't control. creatures you don't control get -1/-1 for each slime counter on them. whenever a creature you don't control with a slime counter on it dies, create a 1/1 black slug creature token. {u}{b}, sacrifice a slug: draw a card."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:7",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        },
-        {
-          "label": "SacOutlet",
-          "confidence": 0.6,
-          "evidence": "regex:SacOutlet"
-        }
-      ]
-    },
-    {
-      "name": "Umbris, Fear Manifest",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Nightmare Horror",
-        "cmc": 5.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "umbris gets +1/+1 for each card your opponents own in exile. whenever umbris or another nightmare or horror you control enters, target opponent exiles cards from the top of their library until they exile a land card."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:5",
           "confidence": 0.7,
           "evidence": "cmc"
         }
@@ -2677,67 +2687,6 @@
       ]
     },
     {
-      "name": "Vampiric Tutor",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "search your library for a card, then shuffle and put that card on top. you lose 2 life."
-      },
-      "labels": [
-        {
-          "label": "unconditional_tutors",
-          "confidence": 0.95,
-          "evidence": "curated:unconditional_tutors"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "TutorAny",
-          "confidence": 0.6,
-          "evidence": "regex:TutorAny"
-        },
-        {
-          "label": "Tutor",
-          "confidence": 0.6,
-          "evidence": "regex:Tutor"
-        }
-      ]
-    },
-    {
-      "name": "Vraska's Fall",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Instant",
-        "cmc": 3.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "each opponent sacrifices a creature or planeswalker of their choice and gets a poison counter."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
       "name": "Windfall",
       "quantity": 1,
       "scryfall": {
@@ -2749,41 +2698,9 @@
       },
       "labels": [
         {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        }
-      ]
-    },
-    {
-      "name": "Zellix, Sanity Flayer",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Horror",
-        "cmc": 3.0,
-        "keywords": [
-          "Choose a background",
-          "Hive Mind",
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "hive mind \u2014 whenever a player mills one or more creature cards, you create a 1/1 black horror creature token. {1}, {t}: target player mills three cards. choose a background"
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
+          "label": "wheel_staples",
+          "confidence": 0.95,
+          "evidence": "curated:wheel_staples"
         },
         {
           "label": "CommanderLegal",
@@ -2796,157 +2713,159 @@
           "evidence": "cmc"
         },
         {
-          "label": "HasKeyword:choose a background",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:hive mind",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
+          "label": "Discard",
+          "confidence": 0.6,
+          "evidence": "regex:Discard"
         }
       ]
     }
   ],
   "aggregate": {
     "counts": {
-      "IsCreature": 18,
-      "CommanderLegal": 108,
-      "CMC:3": 17,
-      "HasKeyword:deathtouch": 2,
-      "HasKeyword:flying": 4,
-      "Draw": 10,
-      "SacOutlet": 4,
-      "CMC:2": 23,
-      "HasKeyword:enchant": 1,
-      "HasKeyword:corrupted": 4,
-      "SpotRemoval": 3,
-      "CMC:1": 18,
-      "HasKeyword:toxic": 2,
-      "IsLand": 36,
-      "CMC:0": 36,
-      "ProducesMana": 38,
-      "ProduceMana": 3,
-      "Counterspell": 5,
+      "IsCreature": 15,
       "IsLegendary": 6,
-      "HasKeyword:mill": 15,
+      "CommanderLegal": 100,
       "CMC:5": 3,
-      "Ritual": 1,
-      "staple_board_wipes": 1,
-      "CMC:4": 8,
-      "BoardWipe": 1,
-      "HasKeyword:shadow": 1,
-      "unconditional_tutors": 2,
-      "TutorAny": 3,
-      "Tutor": 4,
-      "HasKeyword:equip": 5,
-      "Artifact": 15,
-      "free_interaction": 1,
-      "Loot": 2,
-      "HasKeyword:proliferate": 2,
-      "CMC:7": 2,
+      "HasKeyword:mill": 13,
+      "Mill": 13,
+      "CMC:1": 15,
+      "HasKeyword:equip": 4,
+      "Artifact": 12,
+      "CMC:2": 20,
+      "CMC:3": 16,
+      "CMC:4": 7,
+      "mill_staples": 5,
       "HasKeyword:flash": 2,
-      "HasKeyword:connive": 1,
-      "HasKeyword:convoke": 1,
-      "HasKeyword:kicker": 1,
-      "HasKeyword:trample": 1,
-      "Recursion": 2,
-      "HasKeyword:scry": 3,
-      "HasKeyword:landfall": 1,
       "fast_mana": 1,
+      "ProducesMana": 38,
       "ManaRock": 2,
       "CMC:6": 1,
       "HasKeyword:station": 1,
-      "HasKeyword:web-slinging": 1,
+      "Tokens": 4,
+      "HasKeyword:deathtouch": 1,
+      "HasKeyword:flying": 3,
+      "Draw": 9,
+      "SacOutlet": 4,
+      "HasKeyword:shadow": 1,
+      "HasKeyword:proliferate": 2,
+      "Discard": 4,
+      "CMC:7": 2,
+      "Counterspell": 5,
+      "HasKeyword:trample": 1,
+      "HasKeyword:landfall": 1,
       "HasKeyword:ninjutsu": 1,
-      "HasKeyword:cycling": 1,
       "HasKeyword:choose a background": 1,
-      "HasKeyword:hive mind": 1
+      "HasKeyword:hive mind": 1,
+      "reanimator_staples": 2,
+      "HasKeyword:enchant": 1,
+      "Recursion": 2,
+      "Loot": 2,
+      "HasKeyword:corrupted": 2,
+      "SpotRemoval": 3,
+      "free_interaction": 1,
+      "HasKeyword:connive": 1,
+      "HasKeyword:convoke": 1,
+      "HasKeyword:web-slinging": 1,
+      "unconditional_tutors": 2,
+      "TutorAny": 3,
+      "Tutor": 4,
+      "IsLand": 36,
+      "CMC:0": 36,
+      "ProduceMana": 3,
+      "Ritual": 1,
+      "HasKeyword:scry": 3,
+      "staple_board_wipes": 1,
+      "BoardWipe": 1,
+      "HasKeyword:kicker": 1,
+      "Reanimator": 1,
+      "HasKeyword:cycling": 1,
+      "wheel_staples": 1
     },
     "percentages": {
-      "IsCreature": 16.67,
+      "IsCreature": 15.0,
+      "IsLegendary": 6.0,
       "CommanderLegal": 100.0,
-      "CMC:3": 15.74,
-      "HasKeyword:deathtouch": 1.85,
-      "HasKeyword:flying": 3.7,
-      "Draw": 9.26,
-      "SacOutlet": 3.7,
-      "CMC:2": 21.3,
-      "HasKeyword:enchant": 0.93,
-      "HasKeyword:corrupted": 3.7,
-      "SpotRemoval": 2.78,
-      "CMC:1": 16.67,
-      "HasKeyword:toxic": 1.85,
-      "IsLand": 33.33,
-      "CMC:0": 33.33,
-      "ProducesMana": 35.19,
-      "ProduceMana": 2.78,
-      "Counterspell": 4.63,
-      "IsLegendary": 5.56,
-      "HasKeyword:mill": 13.89,
-      "CMC:5": 2.78,
-      "Ritual": 0.93,
-      "staple_board_wipes": 0.93,
-      "CMC:4": 7.41,
-      "BoardWipe": 0.93,
-      "HasKeyword:shadow": 0.93,
-      "unconditional_tutors": 1.85,
-      "TutorAny": 2.78,
-      "Tutor": 3.7,
-      "HasKeyword:equip": 4.63,
-      "Artifact": 13.89,
-      "free_interaction": 0.93,
-      "Loot": 1.85,
-      "HasKeyword:proliferate": 1.85,
-      "CMC:7": 1.85,
-      "HasKeyword:flash": 1.85,
-      "HasKeyword:connive": 0.93,
-      "HasKeyword:convoke": 0.93,
-      "HasKeyword:kicker": 0.93,
-      "HasKeyword:trample": 0.93,
-      "Recursion": 1.85,
-      "HasKeyword:scry": 2.78,
-      "HasKeyword:landfall": 0.93,
-      "fast_mana": 0.93,
-      "ManaRock": 1.85,
-      "CMC:6": 0.93,
-      "HasKeyword:station": 0.93,
-      "HasKeyword:web-slinging": 0.93,
-      "HasKeyword:ninjutsu": 0.93,
-      "HasKeyword:cycling": 0.93,
-      "HasKeyword:choose a background": 0.93,
-      "HasKeyword:hive mind": 0.93
+      "CMC:5": 3.0,
+      "HasKeyword:mill": 13.0,
+      "Mill": 13.0,
+      "CMC:1": 15.0,
+      "HasKeyword:equip": 4.0,
+      "Artifact": 12.0,
+      "CMC:2": 20.0,
+      "CMC:3": 16.0,
+      "CMC:4": 7.0,
+      "mill_staples": 5.0,
+      "HasKeyword:flash": 2.0,
+      "fast_mana": 1.0,
+      "ProducesMana": 38.0,
+      "ManaRock": 2.0,
+      "CMC:6": 1.0,
+      "HasKeyword:station": 1.0,
+      "Tokens": 4.0,
+      "HasKeyword:deathtouch": 1.0,
+      "HasKeyword:flying": 3.0,
+      "Draw": 9.0,
+      "SacOutlet": 4.0,
+      "HasKeyword:shadow": 1.0,
+      "HasKeyword:proliferate": 2.0,
+      "Discard": 4.0,
+      "CMC:7": 2.0,
+      "Counterspell": 5.0,
+      "HasKeyword:trample": 1.0,
+      "HasKeyword:landfall": 1.0,
+      "HasKeyword:ninjutsu": 1.0,
+      "HasKeyword:choose a background": 1.0,
+      "HasKeyword:hive mind": 1.0,
+      "reanimator_staples": 2.0,
+      "HasKeyword:enchant": 1.0,
+      "Recursion": 2.0,
+      "Loot": 2.0,
+      "HasKeyword:corrupted": 2.0,
+      "SpotRemoval": 3.0,
+      "free_interaction": 1.0,
+      "HasKeyword:connive": 1.0,
+      "HasKeyword:convoke": 1.0,
+      "HasKeyword:web-slinging": 1.0,
+      "unconditional_tutors": 2.0,
+      "TutorAny": 3.0,
+      "Tutor": 4.0,
+      "IsLand": 36.0,
+      "CMC:0": 36.0,
+      "ProduceMana": 3.0,
+      "Ritual": 1.0,
+      "HasKeyword:scry": 3.0,
+      "staple_board_wipes": 1.0,
+      "BoardWipe": 1.0,
+      "HasKeyword:kicker": 1.0,
+      "Reanimator": 1.0,
+      "HasKeyword:cycling": 1.0,
+      "wheel_staples": 1.0
     },
-    "total": 108
+    "total": 100
   },
   "derived": {
-    "Ramp": 3.7,
-    "Tutors": 8.3,
-    "Interaction": 9.3,
-    "Draw": 11.1,
+    "Ramp": 4.0,
+    "Tutors": 9.0,
+    "Interaction": 10.0,
+    "Draw": 11.0,
     "Stax": 0.0,
-    "Recursion": 1.9,
+    "Recursion": 2.0,
     "Combo": 0.0,
-    "Other": 65.7
+    "Other": 64.0
   },
   "matchup": {
     "scores": {
-      "Aggro": 1.0,
-      "Control": 0.5833333333333334,
-      "Combo": 0.8333333333333334,
+      "Aggro": 0.8181818181818182,
+      "Control": 0.6363636363636364,
+      "Combo": 0.9090909090909091,
       "Engine": 1.0
     },
     "strong_against": [
-      "Aggro"
+      "Engine"
     ],
     "weak_against": [
       "Control"
     ],
-    "because": "High Aggro signals and lower Control signals based on labels."
+    "because": "High Engine signals and lower Control signals based on labels."
   }
 }

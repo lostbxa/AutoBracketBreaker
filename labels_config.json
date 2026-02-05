@@ -47,6 +47,30 @@
       "Windfall",
       "Wheel of Misfortune",
       "Reforge the Soul"
+    ],
+    "aristocrats_staples": [
+      "Blood Artist",
+      "Zulaport Cutthroat",
+      "Cruel Celebrant",
+      "Bastion of Remembrance"
+    ],
+    "tokens_staples": [
+      "Doubling Season",
+      "Anointed Procession",
+      "Parallel Lives",
+      "Mondrak, Glory Dominus"
+    ],
+    "lifegain_staples": [
+      "Soul Warden",
+      "Soul's Attendant",
+      "Authority of the Consuls",
+      "Ajani's Pridemate"
+    ],
+    "reanimator_staples": [
+      "Reanimate",
+      "Animate Dead",
+      "Necromancy",
+      "Dance of the Dead"
     ]
   },
   "regex_rules": {
@@ -96,6 +120,27 @@
       "discard .* hand, then draw",
       "each player discards .* and draws",
       "then draws? that many cards"
+    ],
+    "Aristocrats": [
+      "whenever .* dies, .* loses? \\d+ life",
+      "whenever .* dies, you gain \\d+ life",
+      "sacrifice a creature:"
+    ],
+    "Tokens": [
+      "create .* token",
+      "create one or more",
+      "populate"
+    ],
+    "Lifegain": [
+      "gain \\d+ life",
+      "you gain life",
+      "whenever you gain life"
+    ],
+    "Reanimator": [
+      "return target creature card from your graveyard to the battlefield",
+      "return target creature card from a graveyard to the battlefield",
+      "return target creature from your graveyard to the battlefield",
+      "put target creature card from a graveyard onto the battlefield"
     ],
     "Draw": [
       "draw (?:one|two|three|[0-9]+) card",

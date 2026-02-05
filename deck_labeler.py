@@ -53,7 +53,11 @@ DEFAULT_CONFIG = {
         "staple_stax": ["Smokestack", "Winter Orb", "Stasis", "Rule of Law"],
         "combo_enablers": ["Underworld Breach", "Dockside Extortionist"],
         "mill_staples": ["Bruvac the Grandiloquent", "Maddening Cacophony", "Mesmeric Orb", "Mindcrank", "Ruin Crab", "Fractured Sanity"],
-        "wheel_staples": ["Wheel of Fortune", "Windfall", "Wheel of Misfortune", "Reforge the Soul"]
+        "wheel_staples": ["Wheel of Fortune", "Windfall", "Wheel of Misfortune", "Reforge the Soul"],
+        "aristocrats_staples": ["Blood Artist", "Zulaport Cutthroat", "Cruel Celebrant", "Bastion of Remembrance"],
+        "tokens_staples": ["Doubling Season", "Anointed Procession", "Parallel Lives", "Mondrak, Glory Dominus"],
+        "lifegain_staples": ["Soul Warden", "Soul's Attendant", "Authority of the Consuls", "Ajani's Pridemate"],
+        "reanimator_staples": ["Reanimate", "Animate Dead", "Necromancy", "Dance of the Dead"]
     },
     "regex_rules": {
         "TutorAny": ["search your library for a card"],
@@ -71,6 +75,10 @@ DEFAULT_CONFIG = {
         ],
         "Discard": ["target player discards", "each opponent discards", "each player discards", "discard a card"],
         "Wheel": ["discard .* hand, then draw", "each player discards .* and draws", "then draws? that many cards"],
+        "Aristocrats": ["whenever .* dies, .* loses? \\d+ life", "whenever .* dies, you gain \\d+ life", "sacrifice a creature:"],
+        "Tokens": ["create .* token", "create one or more", "populate"],
+        "Lifegain": ["gain \\d+ life", "you gain life", "whenever you gain life"],
+        "Reanimator": ["return target creature card from your graveyard to the battlefield", "return target creature card from a graveyard to the battlefield", "return target creature from your graveyard to the battlefield", "put target creature card from a graveyard onto the battlefield"],
         "Draw": ["draw (?:one|two|three|[0-9]+) card", "draw cards", "draw a card"],
         "Loot": ["draw .* then discard", "draw a card, then discard a card"],
         "RampLand": ["search your library for a land card", "put a land card onto the battlefield"],
@@ -227,21 +235,32 @@ def parse_plain_deck(text: str) -> dict:
     counts = Counter()
     deck_name = "Untitled"
     commanders = []
+    section = "main"
 
     for line in lines:
         low = line.lower()
+        if low in {"commander", "commanders"}:
+            section = "commander"
+            continue
+        if low in {"mainboard", "main deck", "maindeck", "main"}:
+            section = "main"
+            continue
+        if low in {"sideboard", "maybeboard", "maybe board", "may be board"}:
+            section = "ignore"
+            continue
         if low.startswith("name:") or low.startswith("deck:"):
             deck_name = line.split(":", 1)[1].strip()
+            continue
+        if low.startswith("commander:") or low.startswith("commanders:"):
+            _, val = line.split(":", 1)
+            commanders = [v.strip() for v in val.split(",") if v.strip()]
+            section = "main"
             continue
         if re.match(r"^[a-z ].*\(\d+\)$", low):
             continue
         if low.startswith("//") or low.startswith("#"):
             continue
-        if "sideboard" in low or "maybeboard" in low:
-            continue
-        if low.startswith("commander") and ":" in line:
-            _, val = line.split(":", 1)
-            commanders = [v.strip() for v in val.split(",") if v.strip()]
+        if section == "ignore":
             continue
 
         m = re.match(r"^(\d+)x?\s+(.+)$", line, re.I)
@@ -249,17 +268,23 @@ def parse_plain_deck(text: str) -> dict:
             qty = int(m.group(1))
             name = clean_card_name(m.group(2))
             counts[name] += qty
+            if section == "commander" and name not in commanders:
+                commanders.append(name)
             continue
         m2 = re.match(r"^(.+?)\s+x(\d+)$", line, re.I)
         if m2:
             name = clean_card_name(m2.group(1))
             qty = int(m2.group(2))
             counts[name] += qty
+            if section == "commander" and name not in commanders:
+                commanders.append(name)
             continue
 
         name = clean_card_name(line)
         if name:
             counts[name] += 1
+            if section == "commander" and name not in commanders:
+                commanders.append(name)
 
     return {"name": deck_name, "commanders": commanders, "cards": dict(counts)}
 
