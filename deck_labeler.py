@@ -39,6 +39,7 @@ ROOT = os.path.dirname(__file__)
 CONFIG_PATH = os.path.join(ROOT, "labels_config.json")
 CACHE_PATH = os.path.join(ROOT, "scryfall_cache.json")
 OUTPUT_DIR = os.path.join(ROOT, "output")
+CSB_BASE_URL = "https://backend.commanderspellbook.com"
 
 REQUESTS_TIMEOUT = 20
 
@@ -127,14 +128,53 @@ class HttpClient:
                 time.sleep(self.min_interval - delta)
             self._last = time.time()
 
-    def get_json(self, url: str, retries: int = 5, status_q: queue.Queue | None = None) -> dict | None:
+    def get_json(
+        self,
+        url: str,
+        retries: int = 5,
+        status_q: queue.Queue | None = None,
+        headers: dict | None = None,
+    ) -> dict | None:
         backoff = 1.0
         for attempt in range(1, retries + 1):
             try:
                 self._wait_rate_limit()
                 if status_q:
                     status_q.put(("status", f"GET {url} (try {attempt})"))
-                resp = requests.get(url, timeout=REQUESTS_TIMEOUT)
+                resp = requests.get(url, timeout=REQUESTS_TIMEOUT, headers=headers)
+                if resp.status_code == 200:
+                    return resp.json()
+                if resp.status_code in (429, 500, 502, 503, 504):
+                    time.sleep(backoff + random.random() * 0.2)
+                    backoff *= 2
+                    continue
+                try:
+                    return resp.json()
+                except Exception:
+                    return {"error": f"HTTP {resp.status_code}"}
+            except requests.RequestException:
+                time.sleep(backoff + random.random() * 0.2)
+                backoff *= 2
+        return {"error": "request_failed"}
+
+    def post_json(
+        self,
+        url: str,
+        payload: dict,
+        retries: int = 5,
+        status_q: queue.Queue | None = None,
+        headers: dict | None = None,
+    ) -> dict | None:
+        backoff = 1.0
+        for attempt in range(1, retries + 1):
+            try:
+                self._wait_rate_limit()
+                if status_q:
+                    status_q.put(("status", f"POST {url} (try {attempt})"))
+                hdrs = {"Content-Type": "application/json", "Accept": "application/json"}
+                if headers:
+                    hdrs.update(headers)
+                resp = requests.post(url, json=payload, timeout=REQUESTS_TIMEOUT, headers=hdrs)
                 if resp.status_code == 200:
                     return resp.json()
                 if resp.status_code in (429, 500, 502, 503, 504):
@@ -228,6 +268,28 @@ def clean_card_name(line: str) -> str:
     name = re.sub(r"\s+\[.*\]\s*\d+$", "", name)
     name = re.sub(r"\s+\*?F\*?$", "", name)
     return name.strip()
+
+
+def normalize_card_key(name: str) -> str:
+    base = name.split("//")[0].strip()
+    base = clean_card_name(base)
+    return base.lower()
+
+
+def card_name_keys(name: str) -> set[str]:
+    raw = name or ""
+    parts = [p.strip() for p in raw.split("//") if p.strip()]
+    keys = set()
+    if not parts:
+        parts = [raw]
+    for p in parts:
+        cleaned = clean_card_name(p)
+        if cleaned:
+            keys.add(cleaned.lower())
+    full_clean = clean_card_name(raw)
+    if full_clean:
+        keys.add(full_clean.lower())
+    return keys
 
 
 def parse_plain_deck(text: str) -> dict:
@@ -535,6 +597,140 @@ class Analyzer:
         self.scryfall = scryfall
         self.labeler = labeler
 
+    def _spellbook_find_my_combos(
+        self,
+        quantities: dict,
+        commanders: list,
+        status_q: queue.Queue | None = None,
+    ) -> dict:
+        main = []
+        for name, qty in quantities.items():
+            if name in commanders:
+                continue
+            main.append({"card": clean_card_name(name), "quantity": int(qty)})
+        if not main:
+            main = [{"card": clean_card_name(name), "quantity": int(qty)} for name, qty in quantities.items()]
+        commander_cards = [{"card": clean_card_name(c), "quantity": 1} for c in (commanders or [])]
+        payload = {"main": main[:600], "commanders": commander_cards[:12]}
+        if status_q:
+            status_q.put(("log", f"Commander Spellbook find-my-combos: main={len(payload['main'])} commanders={len(payload['commanders'])}"))
+        url = f"{CSB_BASE_URL}/find-my-combos"
+        data = self.http.post_json(url, payload, status_q=status_q)
+        if not isinstance(data, dict) or data.get("error"):
+            return {
+                "source": "find-my-combos",
+                "error": (data or {}).get("error") if isinstance(data, dict) else "request_failed",
+                "request": {"main": len(payload["main"]), "commanders": len(payload["commanders"])},
+            }
+        results = data.get("results")
+        if isinstance(results, list):
+            results = results[0] if results else {}
+        if not isinstance(results, dict) or "included" not in results:
+            if "included" in data:
+                results = data
+            else:
+                return {
+                    "source": "find-my-combos",
+                    "error": "unexpected_response_shape",
+                    "request": {"main": len(payload["main"]), "commanders": len(payload["commanders"])},
+                }
+        included = results.get("included") or []
+        included_by_cmd = results.get("includedByChangingCommanders") or []
+        almost = results.get("almostIncluded") or []
+        return {
+            "source": "find-my-combos",
+            "request": {"main": len(payload["main"]), "commanders": len(payload["commanders"])},
+            "identity": results.get("identity"),
+            "included": included,
+            "includedByChangingCommanders": included_by_cmd,
+            "almostIncluded": almost,
+            "almostIncludedByAddingColors": results.get("almostIncludedByAddingColors") or [],
+            "almostIncludedByChangingCommanders": results.get("almostIncludedByChangingCommanders") or [],
+            "almostIncludedByAddingColorsAndChangingCommanders": results.get("almostIncludedByAddingColorsAndChangingCommanders") or [],
+            "counts": {
+                "included": len(included),
+                "includedByChangingCommanders": len(included_by_cmd),
+                "almostIncluded": len(almost),
+            },
+        }
+
+    def _spellbook_search(self, query: str, status_q: queue.Queue | None = None, max_pages: int = 3) -> list:
+        results: list = []
+        page = 1
+        while page <= max_pages:
+            url = f"{CSB_BASE_URL}/api/combos?q={urllib.parse.quote(query)}&page={page}"
+            data = self.http.get_json(url, status_q=status_q)
+            if not isinstance(data, dict) or data.get("error"):
+                break
+            page_results = data.get("results") or []
+            results.extend(page_results)
+            count = data.get("count", len(results))
+            if len(results) >= count or not page_results:
+                break
+            page += 1
+        return results
+
+    def _find_spellbook_combos(
+        self,
+        quantities: dict,
+        labels_by_card: dict,
+        commanders: list,
+        status_q: queue.Queue | None = None,
+    ) -> dict:
+        deck_set = set()
+        for nm in quantities.keys():
+            deck_set.update(card_name_keys(nm))
+        for cmd in commanders or []:
+            deck_set.update(card_name_keys(cmd))
+        candidate_labels = {"ComboPiece", "ComboEnabler", "combo_enablers"}
+        candidates = []
+        for nm, labs in labels_by_card.items():
+            if any(l["label"] in candidate_labels for l in labs):
+                candidates.append(nm)
+        for cmd in commanders or []:
+            if cmd not in candidates:
+                candidates.append(cmd)
+        for nm in quantities.keys():
+            if nm not in candidates:
+                candidates.append(nm)
+            if len(candidates) >= 30:
+                break
+        if not candidates:
+            return {"queried_cards": [], "matches": [], "total_matches": 0}
+
+        seen_ids = set()
+        matches = []
+        for nm in candidates:
+            query = f'card:"{nm}"'
+            if status_q:
+                status_q.put(("log", f"Commander Spellbook query: {query}"))
+            combos = self._spellbook_search(query, status_q=status_q, max_pages=4)
+            if not combos:
+                query = f"card:{nm}"
+                if status_q:
+                    status_q.put(("log", f"Commander Spellbook query: {query}"))
+                combos = self._spellbook_search(query, status_q=status_q, max_pages=2)
+            for combo in combos:
+                combo_id = combo.get("id")
+                if combo_id in seen_ids:
+                    continue
+                cards = combo.get("cards") or []
+                combo_card_keys = [card_name_keys(c) for c in cards]
+                if combo_card_keys and all(any(k in deck_set for k in keys) for keys in combo_card_keys):
+                    seen_ids.add(combo_id)
+                    matches.append({
+                        "id": combo_id,
+                        "cards": cards,
+                        "results": combo.get("results"),
+                        "prerequisites": combo.get("prerequisites"),
+                        "steps": combo.get("steps"),
+                        "permalink": f"https://commanderspellbook.com/?id={combo_id}",
+                    })
+            if len(matches) >= 50:
+                break
+
+        return {"queried_cards": candidates, "matches": matches, "total_matches": len(matches)}
+
     def analyze(self, text: str, status_q: queue.Queue) -> dict:
         status_q.put(("status", "Resolving deck"))
         deck = detect_and_resolve_deck(text, self.http, status_q=status_q)
@@ -573,6 +769,15 @@ class Analyzer:
         aggregate = aggregate_deck(labels_by_card, quantities)
         derived = derive_archetypes(aggregate)
         matchup = matchup_analysis(aggregate)
+        spellbook = self._spellbook_find_my_combos(quantities, commanders, status_q=status_q)
+        if spellbook.get("error"):
+            spellbook_fallback = self._find_spellbook_combos(quantities, labels_by_card, commanders, status_q=status_q)
+            spellbook = {"primary": spellbook, "fallback": spellbook_fallback}
+            if status_q:
+                status_q.put(("log", "Commander Spellbook find-my-combos failed; used fallback search."))
+        else:
+            if status_q:
+                status_q.put(("log", f"Commander Spellbook combos found: {spellbook.get('counts', {}).get('included', 0)}"))
 
         return {
             "deck_name": name,
@@ -581,6 +786,7 @@ class Analyzer:
             "aggregate": aggregate,
             "derived": derived,
             "matchup": matchup,
+            "commander_spellbook": spellbook,
         }
 
 
