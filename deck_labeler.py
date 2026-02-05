@@ -998,18 +998,24 @@ Commander: Atraxa, Praetors' Voice
         self.commanders_label.config(text=f"Commander(s): {', '.join(commanders)}")
 
         self.canvas.delete("all")
+        agg = report.get("aggregate") or {}
+        percentages = agg.get("percentages") or {}
+        items = sorted(percentages.items(), key=lambda x: x[1], reverse=True)
+
         w = 380
         h = 18
         gap = 6
         y = 10
-        for k, pct in derived.items():
+        total_h = max(230, 10 + len(items) * (h + gap))
+        self.canvas.config(height=total_h)
+        for k, pct in items:
             length = int((pct / 100.0) * w)
             self.canvas.create_rectangle(10, y, 10 + length, y + h, fill=self._colors["accent"])
             self.canvas.create_text(
                 12 + length + 50,
                 y + h / 2,
                 anchor=tk.W,
-                text=f"{k}: {pct}%",
+                text=f"{k}: {pct:.1f}%",
                 fill=self._colors["text_fg"],
             )
             y += h + gap
