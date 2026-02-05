@@ -239,6 +239,86 @@
       ]
     },
     {
+      "name": "Bruvac the Grandiloquent",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Human Advisor",
+        "cmc": 3.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "if an opponent would mill one or more cards, they mill twice that many cards instead."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        }
+      ]
+    },
+    {
+      "name": "Captain N'ghathrod",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Horror Pirate",
+        "cmc": 5.0,
+        "keywords": [
+          "Mill"
+        ],
+        "produced_mana": null,
+        "oracle_text": "horrors you control have menace. whenever a horror you control deals combat damage to a player, that player mills that many cards. at the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. put it onto the battlefield under your control."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:5",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "HasKeyword:mill",
+          "confidence": 0.8,
+          "evidence": "keywords"
+        }
+      ]
+    },
+    {
       "name": "Command Tower",
       "quantity": 1,
       "scryfall": {
@@ -599,46 +679,6 @@
       ]
     },
     {
-      "name": "Eddie the Judge",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Human Advisor",
-        "cmc": 3.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "if an opponent would mill one or more cards, they mill twice that many cards instead."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
-    },
-    {
       "name": "Evolving Wilds",
       "quantity": 1,
       "scryfall": {
@@ -774,49 +814,6 @@
           "label": "Loot",
           "confidence": 0.6,
           "evidence": "regex:Loot"
-        }
-      ]
-    },
-    {
-      "name": "Gary, the Snail",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Slug Horror",
-        "cmc": 7.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "at the beginning of each end step, put a slime counter on each creature you don't control. creatures you don't control get -1/-1 for each slime counter on them. whenever a creature you don't control with a slime counter on it dies, create a 1/1 black slug creature token. {u}{b}, sacrifice a slug: draw a card."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:7",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Draw",
-          "confidence": 0.6,
-          "evidence": "regex:Draw"
-        },
-        {
-          "label": "SacOutlet",
-          "confidence": 0.6,
-          "evidence": "regex:SacOutlet"
         }
       ]
     },
@@ -1076,7 +1073,7 @@
       ]
     },
     {
-      "name": "Jidoor, Aristocratic Capital",
+      "name": "Jidoor, Aristocratic Capital // Overture",
       "quantity": 1,
       "scryfall": {
         "type_line": "Land \u2014 Town // Sorcery \u2014 Adventure",
@@ -1354,7 +1351,7 @@
     },
     {
       "name": "Mindcrank",
-      "quantity": 1,
+      "quantity": 2,
       "scryfall": {
         "type_line": "Artifact",
         "cmc": 2.0,
@@ -1578,6 +1575,34 @@
       ]
     },
     {
+      "name": "Phyrexian Reclamation",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 1.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "{1}{b}, pay 2 life: return target creature card from your graveyard to your hand."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Recursion",
+          "confidence": 0.6,
+          "evidence": "regex:Recursion"
+        }
+      ]
+    },
+    {
       "name": "Pilfer",
       "quantity": 1,
       "scryfall": {
@@ -1774,6 +1799,29 @@
         },
         {
           "label": "CMC:1",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        }
+      ]
+    },
+    {
+      "name": "Rhystic Study",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Enchantment",
+        "cmc": 3.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "whenever an opponent casts a spell, you may draw a card unless that player pays {1}."
+      },
+      "labels": [
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:3",
           "confidence": 0.7,
           "evidence": "cmc"
         }
@@ -2041,34 +2089,6 @@
           "label": "ManaRock",
           "confidence": 0.88,
           "evidence": "artifact+produces_mana"
-        }
-      ]
-    },
-    {
-      "name": "Sorry, Jack . . . Chucky's Back",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 1.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "{1}{b}, pay 2 life: return target creature card from your graveyard to your hand."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:1",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "Recursion",
-          "confidence": 0.6,
-          "evidence": "regex:Recursion"
         }
       ]
     },
@@ -2546,6 +2566,49 @@
       ]
     },
     {
+      "name": "Toxrill, the Corrosive",
+      "quantity": 1,
+      "scryfall": {
+        "type_line": "Legendary Creature \u2014 Slug Horror",
+        "cmc": 7.0,
+        "keywords": [],
+        "produced_mana": null,
+        "oracle_text": "at the beginning of each end step, put a slime counter on each creature you don't control. creatures you don't control get -1/-1 for each slime counter on them. whenever a creature you don't control with a slime counter on it dies, create a 1/1 black slug creature token. {u}{b}, sacrifice a slug: draw a card."
+      },
+      "labels": [
+        {
+          "label": "IsCreature",
+          "confidence": 0.85,
+          "evidence": "type_line:creature"
+        },
+        {
+          "label": "IsLegendary",
+          "confidence": 0.9,
+          "evidence": "type_line:legendary"
+        },
+        {
+          "label": "CommanderLegal",
+          "confidence": 0.8,
+          "evidence": "legalities:commander"
+        },
+        {
+          "label": "CMC:7",
+          "confidence": 0.7,
+          "evidence": "cmc"
+        },
+        {
+          "label": "Draw",
+          "confidence": 0.6,
+          "evidence": "regex:Draw"
+        },
+        {
+          "label": "SacOutlet",
+          "confidence": 0.6,
+          "evidence": "regex:SacOutlet"
+        }
+      ]
+    },
+    {
       "name": "Umbris, Fear Manifest",
       "quantity": 1,
       "scryfall": {
@@ -2610,29 +2673,6 @@
           "label": "Recursion",
           "confidence": 0.6,
           "evidence": "regex:Recursion"
-        }
-      ]
-    },
-    {
-      "name": "Unstable Harmonics",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Enchantment",
-        "cmc": 3.0,
-        "keywords": [],
-        "produced_mana": null,
-        "oracle_text": "whenever an opponent casts a spell, you may draw a card unless that player pays {1}."
-      },
-      "labels": [
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:3",
-          "confidence": 0.7,
-          "evidence": "cmc"
         }
       ]
     },
@@ -2771,58 +2811,18 @@
           "evidence": "keywords"
         }
       ]
-    },
-    {
-      "name": "Eddie, Ghost of the Navigator",
-      "quantity": 1,
-      "scryfall": {
-        "type_line": "Legendary Creature \u2014 Horror Pirate",
-        "cmc": 5.0,
-        "keywords": [
-          "Mill"
-        ],
-        "produced_mana": null,
-        "oracle_text": "horrors you control have menace. whenever a horror you control deals combat damage to a player, that player mills that many cards. at the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. put it onto the battlefield under your control."
-      },
-      "labels": [
-        {
-          "label": "IsCreature",
-          "confidence": 0.85,
-          "evidence": "type_line:creature"
-        },
-        {
-          "label": "IsLegendary",
-          "confidence": 0.9,
-          "evidence": "type_line:legendary"
-        },
-        {
-          "label": "CommanderLegal",
-          "confidence": 0.8,
-          "evidence": "legalities:commander"
-        },
-        {
-          "label": "CMC:5",
-          "confidence": 0.7,
-          "evidence": "cmc"
-        },
-        {
-          "label": "HasKeyword:mill",
-          "confidence": 0.8,
-          "evidence": "keywords"
-        }
-      ]
     }
   ],
   "aggregate": {
     "counts": {
       "IsCreature": 18,
-      "CommanderLegal": 107,
+      "CommanderLegal": 108,
       "CMC:3": 17,
       "HasKeyword:deathtouch": 2,
       "HasKeyword:flying": 4,
       "Draw": 10,
       "SacOutlet": 4,
-      "CMC:2": 22,
+      "CMC:2": 23,
       "HasKeyword:enchant": 1,
       "HasKeyword:corrupted": 4,
       "SpotRemoval": 3,
@@ -2833,6 +2833,9 @@
       "ProducesMana": 38,
       "ProduceMana": 3,
       "Counterspell": 5,
+      "IsLegendary": 6,
+      "HasKeyword:mill": 15,
+      "CMC:5": 3,
       "Ritual": 1,
       "staple_board_wipes": 1,
       "CMC:4": 8,
@@ -2842,24 +2845,21 @@
       "TutorAny": 3,
       "Tutor": 4,
       "HasKeyword:equip": 5,
-      "Artifact": 14,
-      "IsLegendary": 6,
-      "HasKeyword:mill": 14,
+      "Artifact": 15,
       "free_interaction": 1,
       "Loot": 2,
-      "CMC:7": 2,
-      "CMC:5": 3,
       "HasKeyword:proliferate": 2,
+      "CMC:7": 2,
       "HasKeyword:flash": 2,
       "HasKeyword:connive": 1,
       "HasKeyword:convoke": 1,
       "HasKeyword:kicker": 1,
       "HasKeyword:trample": 1,
+      "Recursion": 2,
       "HasKeyword:scry": 3,
       "HasKeyword:landfall": 1,
       "fast_mana": 1,
       "ManaRock": 2,
-      "Recursion": 2,
       "CMC:6": 1,
       "HasKeyword:station": 1,
       "HasKeyword:web-slinging": 1,
@@ -2869,51 +2869,51 @@
       "HasKeyword:hive mind": 1
     },
     "percentages": {
-      "IsCreature": 16.82,
+      "IsCreature": 16.67,
       "CommanderLegal": 100.0,
-      "CMC:3": 15.89,
-      "HasKeyword:deathtouch": 1.87,
-      "HasKeyword:flying": 3.74,
-      "Draw": 9.35,
-      "SacOutlet": 3.74,
-      "CMC:2": 20.56,
+      "CMC:3": 15.74,
+      "HasKeyword:deathtouch": 1.85,
+      "HasKeyword:flying": 3.7,
+      "Draw": 9.26,
+      "SacOutlet": 3.7,
+      "CMC:2": 21.3,
       "HasKeyword:enchant": 0.93,
-      "HasKeyword:corrupted": 3.74,
-      "SpotRemoval": 2.8,
-      "CMC:1": 16.82,
-      "HasKeyword:toxic": 1.87,
-      "IsLand": 33.64,
-      "CMC:0": 33.64,
-      "ProducesMana": 35.51,
-      "ProduceMana": 2.8,
-      "Counterspell": 4.67,
+      "HasKeyword:corrupted": 3.7,
+      "SpotRemoval": 2.78,
+      "CMC:1": 16.67,
+      "HasKeyword:toxic": 1.85,
+      "IsLand": 33.33,
+      "CMC:0": 33.33,
+      "ProducesMana": 35.19,
+      "ProduceMana": 2.78,
+      "Counterspell": 4.63,
+      "IsLegendary": 5.56,
+      "HasKeyword:mill": 13.89,
+      "CMC:5": 2.78,
       "Ritual": 0.93,
       "staple_board_wipes": 0.93,
-      "CMC:4": 7.48,
+      "CMC:4": 7.41,
       "BoardWipe": 0.93,
       "HasKeyword:shadow": 0.93,
-      "unconditional_tutors": 1.87,
-      "TutorAny": 2.8,
-      "Tutor": 3.74,
-      "HasKeyword:equip": 4.67,
-      "Artifact": 13.08,
-      "IsLegendary": 5.61,
-      "HasKeyword:mill": 13.08,
+      "unconditional_tutors": 1.85,
+      "TutorAny": 2.78,
+      "Tutor": 3.7,
+      "HasKeyword:equip": 4.63,
+      "Artifact": 13.89,
       "free_interaction": 0.93,
-      "Loot": 1.87,
-      "CMC:7": 1.87,
-      "CMC:5": 2.8,
-      "HasKeyword:proliferate": 1.87,
-      "HasKeyword:flash": 1.87,
+      "Loot": 1.85,
+      "HasKeyword:proliferate": 1.85,
+      "CMC:7": 1.85,
+      "HasKeyword:flash": 1.85,
       "HasKeyword:connive": 0.93,
       "HasKeyword:convoke": 0.93,
       "HasKeyword:kicker": 0.93,
       "HasKeyword:trample": 0.93,
-      "HasKeyword:scry": 2.8,
+      "Recursion": 1.85,
+      "HasKeyword:scry": 2.78,
       "HasKeyword:landfall": 0.93,
       "fast_mana": 0.93,
-      "ManaRock": 1.87,
-      "Recursion": 1.87,
+      "ManaRock": 1.85,
       "CMC:6": 0.93,
       "HasKeyword:station": 0.93,
       "HasKeyword:web-slinging": 0.93,
@@ -2922,17 +2922,17 @@
       "HasKeyword:choose a background": 0.93,
       "HasKeyword:hive mind": 0.93
     },
-    "total": 107
+    "total": 108
   },
   "derived": {
     "Ramp": 3.7,
-    "Tutors": 8.4,
+    "Tutors": 8.3,
     "Interaction": 9.3,
-    "Draw": 11.2,
+    "Draw": 11.1,
     "Stax": 0.0,
     "Recursion": 1.9,
     "Combo": 0.0,
-    "Other": 65.4
+    "Other": 65.7
   },
   "matchup": {
     "scores": {

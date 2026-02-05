@@ -563,13 +563,44 @@ class App:
         self.output_dir = ensure_output_dir()
         self.status_q: queue.Queue = queue.Queue()
         self.tkimg = None
+        self._apply_dark_theme()
         self._build_ui()
         self._poll_status()
+
+    def _apply_dark_theme(self) -> None:
+        bg = "#0f1115"
+        panel = "#161a22"
+        text_bg = "#0f131a"
+        text_fg = "#e6e8ef"
+        muted = "#aab1c3"
+        accent = "#3b82f6"
+
+        self.root.configure(bg=bg)
+        style = ttk.Style(self.root)
+        try:
+            style.theme_use("clam")
+        except Exception:
+            pass
+        style.configure(".", background=bg, foreground=text_fg)
+        style.configure("TFrame", background=bg)
+        style.configure("TLabel", background=bg, foreground=text_fg)
+        style.configure("TButton", background=panel, foreground=text_fg, padding=6)
+        style.map("TButton", background=[("active", "#1b2130")])
+        style.configure("TProgressbar", troughcolor=panel, background=accent)
+
+        self._colors = {
+            "bg": bg,
+            "panel": panel,
+            "text_bg": text_bg,
+            "text_fg": text_fg,
+            "muted": muted,
+            "accent": accent,
+        }
 
     def _build_ui(self) -> None:
         top = ttk.Frame(self.root)
         top.pack(fill=tk.BOTH, expand=True)
-        self.input_text = tk.Text(top, height=8)
+        self.input_text = tk.Text(top, height=8, bg=self._colors["text_bg"], fg=self._colors["text_fg"], insertbackground=self._colors["text_fg"])
         self.input_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=6, pady=6)
         ctrl = ttk.Frame(top)
         ctrl.pack(side=tk.LEFT, fill=tk.Y, padx=6, pady=6)
@@ -582,29 +613,36 @@ class App:
         mid.pack(fill=tk.X, padx=6, pady=6)
         self.progress = ttk.Progressbar(mid, mode="determinate")
         self.progress.pack(fill=tk.X)
-        self.status_label = ttk.Label(mid, text="Idle")
+        self.status_label = ttk.Label(mid, text="Idle", foreground=self._colors["muted"])
         self.status_label.pack(anchor=tk.W)
 
         log_frame = ttk.Frame(self.root)
         log_frame.pack(fill=tk.BOTH, expand=True, padx=6, pady=6)
-        self.log_text = tk.Text(log_frame, height=10)
+        self.log_text = tk.Text(log_frame, height=6, bg=self._colors["text_bg"], fg=self._colors["text_fg"], insertbackground=self._colors["text_fg"])
         self.log_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         log_scroll = ttk.Scrollbar(log_frame, command=self.log_text.yview)
         log_scroll.pack(side=tk.RIGHT, fill=tk.Y)
         self.log_text.config(yscrollcommand=log_scroll.set)
 
         summary = ttk.Frame(self.root)
-        summary.pack(fill=tk.BOTH, padx=6, pady=6)
-        self.cmd_img_label = ttk.Label(summary)
+        summary.pack(fill=tk.BOTH, expand=True, padx=6, pady=6)
+
+        summary_left = ttk.Frame(summary)
+        summary_left.pack(side=tk.LEFT, fill=tk.Y, padx=6)
+        summary_right = ttk.Frame(summary)
+        summary_right.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=6)
+
+        self.cmd_img_label = ttk.Label(summary_left)
         self.cmd_img_label.pack()
-        self.deck_label = ttk.Label(summary, text="Deck: ")
-        self.deck_label.pack()
-        self.commanders_label = ttk.Label(summary, text="Commander: ")
-        self.commanders_label.pack()
-        self.canvas = tk.Canvas(summary, width=420, height=160)
-        self.canvas.pack()
-        self.matchup_box = tk.Text(summary, height=6, width=52)
-        self.matchup_box.pack()
+        self.deck_label = ttk.Label(summary_left, text="Deck: ")
+        self.deck_label.pack(anchor=tk.W)
+        self.commanders_label = ttk.Label(summary_left, text="Commander: ")
+        self.commanders_label.pack(anchor=tk.W)
+
+        self.canvas = tk.Canvas(summary_right, width=380, height=230, bg=self._colors["bg"], highlightthickness=0)
+        self.canvas.pack(fill=tk.BOTH, expand=True)
+        self.matchup_box = tk.Text(summary_right, height=6, width=52, bg=self._colors["text_bg"], fg=self._colors["text_fg"], insertbackground=self._colors["text_fg"])
+        self.matchup_box.pack(fill=tk.X)
 
     def log(self, msg: str) -> None:
         ts = datetime.now().strftime("%H:%M:%S")
@@ -726,8 +764,14 @@ Commander: Atraxa, Praetors' Voice
         y = 10
         for k, pct in derived.items():
             length = int((pct / 100.0) * w)
-            self.canvas.create_rectangle(10, y, 10 + length, y + h, fill="#3b82f6")
-            self.canvas.create_text(12 + length + 50, y + h / 2, anchor=tk.W, text=f"{k}: {pct}%")
+            self.canvas.create_rectangle(10, y, 10 + length, y + h, fill=self._colors["accent"])
+            self.canvas.create_text(
+                12 + length + 50,
+                y + h / 2,
+                anchor=tk.W,
+                text=f"{k}: {pct}%",
+                fill=self._colors["text_fg"],
+            )
             y += h + gap
 
         self.matchup_box.delete(1.0, tk.END)
