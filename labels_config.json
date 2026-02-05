@@ -33,6 +33,20 @@
     "combo_enablers": [
       "Underworld Breach",
       "Dockside Extortionist"
+    ],
+    "mill_staples": [
+      "Bruvac the Grandiloquent",
+      "Maddening Cacophony",
+      "Mesmeric Orb",
+      "Mindcrank",
+      "Ruin Crab",
+      "Fractured Sanity"
+    ],
+    "wheel_staples": [
+      "Wheel of Fortune",
+      "Windfall",
+      "Wheel of Misfortune",
+      "Reforge the Soul"
     ]
   },
   "regex_rules": {
@@ -66,6 +80,22 @@
     "Recursion": [
       "return target .* from your graveyard",
       "return .* card from your graveyard"
+    ],
+    "Mill": [
+      "mill",
+      "put the top .* cards? of .* library into .* graveyard",
+      "puts? the top .* cards? of .* library into .* graveyard"
+    ],
+    "Discard": [
+      "target player discards",
+      "each opponent discards",
+      "each player discards",
+      "discard a card"
+    ],
+    "Wheel": [
+      "discard .* hand, then draw",
+      "each player discards .* and draws",
+      "then draws? that many cards"
     ],
     "Draw": [
       "draw (?:one|two|three|[0-9]+) card",

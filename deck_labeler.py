@@ -51,7 +51,9 @@ DEFAULT_CONFIG = {
         "free_interaction": ["Force of Will", "Force of Negation", "Fierce Guardianship", "Swan Song"],
         "staple_board_wipes": ["Wrath of God", "Supreme Verdict", "Damnation", "Toxic Deluge"],
         "staple_stax": ["Smokestack", "Winter Orb", "Stasis", "Rule of Law"],
-        "combo_enablers": ["Underworld Breach", "Dockside Extortionist"]
+        "combo_enablers": ["Underworld Breach", "Dockside Extortionist"],
+        "mill_staples": ["Bruvac the Grandiloquent", "Maddening Cacophony", "Mesmeric Orb", "Mindcrank", "Ruin Crab", "Fractured Sanity"],
+        "wheel_staples": ["Wheel of Fortune", "Windfall", "Wheel of Misfortune", "Reforge the Soul"]
     },
     "regex_rules": {
         "TutorAny": ["search your library for a card"],
@@ -62,6 +64,13 @@ DEFAULT_CONFIG = {
         "SpotRemoval": ["destroy target", "exile target", r"deals? \d+ damage to target"],
         "BoardWipe": ["destroy all", "exile all", "destroy each"],
         "Recursion": ["return target .* from your graveyard", "return .* card from your graveyard"],
+        "Mill": [
+            "mill",
+            r"put the top .* cards? of .* library into .* graveyard",
+            r"puts? the top .* cards? of .* library into .* graveyard"
+        ],
+        "Discard": ["target player discards", "each opponent discards", "each player discards", "discard a card"],
+        "Wheel": ["discard .* hand, then draw", "each player discards .* and draws", "then draws? that many cards"],
         "Draw": ["draw (?:one|two|three|[0-9]+) card", "draw cards", "draw a card"],
         "Loot": ["draw .* then discard", "draw a card, then discard a card"],
         "RampLand": ["search your library for a land card", "put a land card onto the battlefield"],
