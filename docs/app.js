@@ -1,5 +1,4 @@
-﻿const CSB_BASE = "https://backend.commanderspellbook.com";
-const SCRYFALL_NAMED = "https://api.scryfall.com/cards/named?exact=";
+﻿const SCRYFALL_NAMED = "https://api.scryfall.com/cards/named?exact=";
 const CACHE_KEY = "scryfall_cache_v1";
 const MAX_LOG = 4000;
 
@@ -66,8 +65,7 @@ const ui = {
   commanderName: document.getElementById("commanderName"),
   commanderImg: document.getElementById("commanderImg"),
   matchup: document.getElementById("matchupText"),
-  bars: document.getElementById("bars"),
-  comboList: document.getElementById("comboList")
+  bars: document.getElementById("bars")
 };
 
 let config = defaultConfig;
@@ -249,13 +247,7 @@ async function detectAndResolveDeck(text) {
   const trimmed = text.trim();
   const url = extractFirstUrl(trimmed);
   if (url) {
-    try {
-      log(`Resolving URL via Commander Spellbook: ${url}`);
-      const data = await fetchJson(`${CSB_BASE}/card-list-from-url?url=${encodeURIComponent(url)}`);
-      return deckFromCardListResponse(data, "Untitled");
-    } catch (err) {
-      log("URL resolution failed, falling back to local parsing");
-    }
+    throw new Error("URL resolution is disabled in the web version. Paste the decklist text instead.");
   }
   return parsePlainDeck(trimmed);
 }
@@ -395,27 +387,6 @@ async function fetchScryfallCard(name, cache) {
   return data;
 }
 
-async function fetchSpellbookCombos(quantities, commanders) {
-  const main = [];
-  for (const [name, qty] of Object.entries(quantities)) {
-    if (commanders.includes(name)) continue;
-    main.push({ card: cleanCardName(name), quantity: qty });
-  }
-  const payload = {
-    main: main.slice(0, 600),
-    commanders: commanders.slice(0, 12).map((c) => ({ card: cleanCardName(c), quantity: 1 }))
-  };
-  const data = await fetchJson(`${CSB_BASE}/find-my-combos`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
-  let result = data.results;
-  if (Array.isArray(result)) result = result[0] || {};
-  if (!result || !result.included) return { included: [] };
-  return result;
-}
-
 function renderBars(percentages) {
   const hideExact = new Set(["CommanderLegal", "ProducesMana", "IsLand", "IsCreature", "IsLegendary", "Artifact"]);
   const hidePrefixes = ["CMC:", "HasKeyword:"];
@@ -447,25 +418,6 @@ function renderBars(percentages) {
     row.appendChild(track);
     row.appendChild(pctEl);
     ui.bars.appendChild(row);
-  }
-}
-
-function renderCombos(combos) {
-  ui.comboList.innerHTML = "";
-  const included = combos.included || [];
-  if (!included.length) {
-    ui.comboList.textContent = "No combos found.";
-    return;
-  }
-  for (const combo of included.slice(0, 50)) {
-    const id = combo.id;
-    const text = combo.description || combo.notes || id;
-    const link = document.createElement("a");
-    link.href = `https://commanderspellbook.com/combo/${id}`;
-    link.target = "_blank";
-    link.rel = "noreferrer";
-    link.textContent = `${id}: ${text}`;
-    ui.comboList.appendChild(link);
   }
 }
 
@@ -535,22 +487,13 @@ async function analyze() {
   const derived = deriveArchetypes(aggregate);
   const matchup = matchupAnalysis(aggregate);
 
-  let combos = { included: [] };
-  try {
-    setStatus("Querying Commander Spellbook");
-    combos = await fetchSpellbookCombos(quantities, commanders);
-  } catch {
-    log("Commander Spellbook lookup failed.");
-  }
-
   const report = {
     deck_name: deck.name,
     commanders,
     cards: cardReports,
     aggregate,
     derived,
-    matchup,
-    commander_spellbook: combos
+    matchup
   };
 
   lastReport = report;
@@ -566,7 +509,6 @@ async function analyze() {
   ui.deckName.textContent = `Deck: ${deck.name}`;
   ui.commanderName.textContent = `Commander: ${commanders.join(", ") || "-"}`;
   renderBars(aggregate.percentages || {});
-  renderCombos(combos);
   renderMatchup(matchup);
 
   setStatus("Done");
