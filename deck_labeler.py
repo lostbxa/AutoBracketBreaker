@@ -16,6 +16,7 @@ import re
 import threading
 import time
 import urllib.parse
+import webbrowser
 from collections import Counter
 from datetime import datetime
 
@@ -724,7 +725,7 @@ class Analyzer:
                         "results": combo.get("results"),
                         "prerequisites": combo.get("prerequisites"),
                         "steps": combo.get("steps"),
-                        "permalink": f"https://commanderspellbook.com/?id={combo_id}",
+                        "permalink": f"https://commanderspellbook.com/combo/{combo_id}",
                     })
             if len(matches) >= 50:
                 break
@@ -879,10 +880,38 @@ class App:
         self.commanders_label = ttk.Label(summary_left, text="Commander: ")
         self.commanders_label.pack(anchor=tk.W)
 
-        self.canvas = tk.Canvas(summary_right, width=380, height=230, bg=self._colors["bg"], highlightthickness=0)
-        self.canvas.pack(fill=tk.BOTH, expand=True)
-        self.matchup_box = tk.Text(summary_right, height=6, width=52, bg=self._colors["text_bg"], fg=self._colors["text_fg"], insertbackground=self._colors["text_fg"])
-        self.matchup_box.pack(fill=tk.X)
+        self.matchup_box = tk.Text(
+            summary_left,
+            height=6,
+            width=30,
+            bg=self._colors["text_bg"],
+            fg=self._colors["text_fg"],
+            insertbackground=self._colors["text_fg"],
+        )
+        self.matchup_box.pack(fill=tk.X, pady=(6, 0))
+
+        bars_frame = ttk.Frame(summary_right)
+        bars_frame.pack(fill=tk.BOTH, expand=True)
+        self.canvas = tk.Canvas(bars_frame, width=380, height=230, bg=self._colors["bg"], highlightthickness=0)
+        self.canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        self.bars_scroll = ttk.Scrollbar(bars_frame, orient=tk.VERTICAL, command=self.canvas.yview)
+        self.bars_scroll.pack(side=tk.RIGHT, fill=tk.Y)
+        self.canvas.configure(yscrollcommand=self.bars_scroll.set)
+        self.canvas.bind("<Enter>", lambda e: self.canvas.bind_all("<MouseWheel>", self._on_canvas_mousewheel))
+        self.canvas.bind("<Leave>", lambda e: self.canvas.unbind_all("<MouseWheel>"))
+        self.combo_label = ttk.Label(summary_right, text="Combos (Commander Spellbook)")
+        self.combo_label.pack(anchor=tk.W, pady=(6, 0))
+        self.combo_list = tk.Listbox(
+            summary_right,
+            height=6,
+            bg=self._colors["text_bg"],
+            fg=self._colors["text_fg"],
+            selectbackground=self._colors["accent"],
+            selectforeground=self._colors["text_fg"],
+        )
+        self.combo_list.pack(fill=tk.X)
+        self.combo_list.bind("<Double-Button-1>", self._open_selected_combo)
+        self.combo_urls: list[str] = []
 
     def log(self, msg: str) -> None:
         ts = datetime.now().strftime("%H:%M:%S")
@@ -979,6 +1008,60 @@ Commander: Atraxa, Praetors' Voice
             pass
         self.root.after(200, self._poll_status)
 
+    def _open_selected_combo(self, event) -> None:
+        if not self.combo_list.curselection():
+            return
+        idx = int(self.combo_list.curselection()[0])
+        if 0 <= idx < len(self.combo_urls):
+            webbrowser.open(self.combo_urls[idx])
+
+    def _on_canvas_mousewheel(self, event) -> None:
+        if event.delta == 0:
+            return
+        self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+    def _extract_combo_entries(self, report: dict) -> list[tuple[str, str]]:
+        entries: list[tuple[str, str]] = []
+        csb = report.get("commander_spellbook") or {}
+
+        def add_entry(combo_id: str, label: str, url: str) -> None:
+            if combo_id and url:
+                entries.append((label, url))
+
+        included = []
+        if isinstance(csb, dict):
+            if csb.get("source") == "find-my-combos":
+                included = csb.get("included") or []
+            elif "primary" in csb and isinstance(csb.get("primary"), dict):
+                primary = csb.get("primary") or {}
+                if primary.get("source") == "find-my-combos":
+                    included = primary.get("included") or []
+
+        if included:
+            for v in included:
+                combo_id = v.get("id")
+                desc = (v.get("description") or v.get("notes") or "").strip()
+                label = f"{combo_id}: {desc[:80]}".strip() if desc else f"{combo_id}"
+                url = f"https://commanderspellbook.com/?id={combo_id}"
+                add_entry(combo_id, label, url)
+            return entries
+
+        fallback = None
+        if isinstance(csb, dict) and "fallback" in csb:
+            fallback = csb.get("fallback")
+        elif isinstance(csb, dict) and "matches" in csb:
+            fallback = csb
+
+        if isinstance(fallback, dict):
+            for combo in fallback.get("matches") or []:
+                combo_id = combo.get("id")
+                cards = combo.get("cards") or []
+                label = f"{combo_id}: " + " + ".join(cards[:4]) if combo_id else "Combo"
+                url = combo.get("permalink") or f"https://commanderspellbook.com/?id={combo_id}"
+                add_entry(combo_id, label, url)
+
+        return entries
+
     def _show_result(self, val: dict) -> None:
         report = val.get("report") or {}
         img = val.get("img")
@@ -1007,7 +1090,7 @@ Commander: Atraxa, Praetors' Voice
         gap = 6
         y = 10
         total_h = max(230, 10 + len(items) * (h + gap))
-        self.canvas.config(height=total_h)
+        self.canvas.config(scrollregion=(0, 0, w + 120, total_h))
         for k, pct in items:
             length = int((pct / 100.0) * w)
             self.canvas.create_rectangle(10, y, 10 + length, y + h, fill=self._colors["accent"])
@@ -1025,6 +1108,17 @@ Commander: Atraxa, Praetors' Voice
         self.matchup_box.insert(tk.END, f"Strong Against: {', '.join(mm.get('strong_against', []))}\n")
         self.matchup_box.insert(tk.END, f"Weak Against: {', '.join(mm.get('weak_against', []))}\n")
         self.matchup_box.insert(tk.END, f"Notes: {mm.get('because', '')}\n")
+
+        self.combo_list.delete(0, tk.END)
+        self.combo_urls = []
+        combos = self._extract_combo_entries(report)
+        if not combos:
+            self.combo_list.insert(tk.END, "No combos found")
+            self.combo_urls.append("https://commanderspellbook.com/")
+        else:
+            for label, url in combos[:50]:
+                self.combo_list.insert(tk.END, label)
+                self.combo_urls.append(url)
         self.status_label.config(text="Done")
 
 
