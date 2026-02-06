@@ -1,0 +1,235 @@
+﻿:root {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --panel: #161a22;
+  --panel-2: #1b2230;
+  --text: #e6e8ef;
+  --muted: #aab1c3;
+  --accent: #3b82f6;
+  --accent-2: #22c55e;
+  --border: #232a3b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--panel-2);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input textarea {
+  width: 100%;
+  min-height: 140px;
+  background: #0f131a;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 18px;
+}
+
+.progress {
+  flex: 1;
+  height: 10px;
+  background: var(--panel);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.left .card img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.deckinfo {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.matchup {
+  margin-top: 8px;
+  background: #0f131a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.matchup-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+#matchupText {
+  margin: 0;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
+
+.bars {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.bar-label {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  background: #0f131a;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  height: 10px;
+  position: relative;
+}
+
+.bar-fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 999px;
+}
+
+.bar-pct {
+  font-size: 12px;
+  color: var(--text);
+  text-align: right;
+}
+
+.combo-list {
+  max-height: 200px;
+  overflow: auto;
+  background: #0f131a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.combo-list a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.combo-list a:hover {
+  text-decoration: underline;
+}
+
+.logs .card {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+#logText {
+  margin: 0;
+  white-space: pre-wrap;
+  color: var(--muted);
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
