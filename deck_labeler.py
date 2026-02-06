@@ -910,6 +910,9 @@ class App:
             selectforeground=self._colors["text_fg"],
         )
         self.combo_list.pack(fill=tk.X)
+        self.combo_hscroll = ttk.Scrollbar(summary_right, orient=tk.HORIZONTAL, command=self.combo_list.xview)
+        self.combo_hscroll.pack(fill=tk.X)
+        self.combo_list.configure(xscrollcommand=self.combo_hscroll.set)
         self.combo_list.bind("<Double-Button-1>", self._open_selected_combo)
         self.combo_urls: list[str] = []
 
@@ -1041,8 +1044,8 @@ Commander: Atraxa, Praetors' Voice
             for v in included:
                 combo_id = v.get("id")
                 desc = (v.get("description") or v.get("notes") or "").strip()
-                label = f"{combo_id}: {desc[:80]}".strip() if desc else f"{combo_id}"
-                url = f"https://commanderspellbook.com/?id={combo_id}"
+                label = f"{combo_id}: {desc}".strip() if desc else f"{combo_id}"
+                url = f"https://commanderspellbook.com/combo/{combo_id}"
                 add_entry(combo_id, label, url)
             return entries
 
@@ -1056,8 +1059,8 @@ Commander: Atraxa, Praetors' Voice
             for combo in fallback.get("matches") or []:
                 combo_id = combo.get("id")
                 cards = combo.get("cards") or []
-                label = f"{combo_id}: " + " + ".join(cards[:4]) if combo_id else "Combo"
-                url = combo.get("permalink") or f"https://commanderspellbook.com/?id={combo_id}"
+                label = f"{combo_id}: " + " + ".join(cards) if combo_id else "Combo"
+                url = combo.get("permalink") or f"https://commanderspellbook.com/combo/{combo_id}"
                 add_entry(combo_id, label, url)
 
         return entries
@@ -1083,7 +1086,20 @@ Commander: Atraxa, Praetors' Voice
         self.canvas.delete("all")
         agg = report.get("aggregate") or {}
         percentages = agg.get("percentages") or {}
-        items = sorted(percentages.items(), key=lambda x: x[1], reverse=True)
+        hide_exact = {
+            "CommanderLegal",
+            "ProducesMana",
+            "IsLand",
+            "IsCreature",
+            "IsLegendary",
+            "Artifact",
+        }
+        hide_prefixes = ("CMC:", "HasKeyword:")
+        filtered = {
+            k: v for k, v in percentages.items()
+            if k not in hide_exact and not any(k.startswith(p) for p in hide_prefixes)
+        }
+        items = sorted(filtered.items(), key=lambda x: x[1], reverse=True)
 
         w = 380
         h = 18
